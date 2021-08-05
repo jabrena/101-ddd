@@ -1,60 +1,140 @@
 <!doctype html>
 <html>
-	<head>
 
-		<title>101-DDD</title>
-		<link rel="shortcut icon" href="images/favicon.ico" />
+<head>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>101-DDD</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" media="print" href="dist/print.css">
-		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h2>101 DDD</h2>
-				</section>
-				<section>
-					<h2>Agenda</h2>
-					<ul>
-						<li>What is DDD?</li>
-						<li>DDD Process</li>
-						<li>Event Storming</li>
-						<li>Onion Architecture</li>
-						<li>Jmolecules</li>
-						<li>ArchUnit</li>
-					</ul>
-				</section>
-			</div>
-		</div>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" media="print" href="dist/print.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-			Reveal.configure(
-				{ showNotes: true },
-				{ showNotes: 'separate-page' },
-				{ pdfMaxPagesPerSlide: 1 }
-			);
-		</script>
-	</body>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>101 DDD</h2>
+            </section>
+            <section>
+                <img src="images/joke2.jpg" width="40%" />
+
+                <br />
+                <small><strong>Source:</strong> http//www.huesemann.org/modern-design-patterns/</small>
+            </section>
+            <!--
+            https://martinfowler.com/tags/domain%20driven%20design.html
+            -->
+            <section>
+                <h2>Agenda</h2>
+                <ul>
+                    <li>Who I am</li>
+                    <li>Context</li>
+                    <li>From the beginning</li>
+                    <li>What is DDD?</li>
+                    <li>DDD Process</li>
+                    <li>Event Storming</li>
+                    <li>Onion Architecture</li>
+                    <li>Jmolecules</li>
+                    <li>ArchUnit</li>
+                </ul>
+            </section>
+            <!--
+            https://www.mentimeter.com/s/21defc83d4f68efad4e1b0d94cc818f4/786a46a64729/edit
+            -->
+            <section>
+                <h2>Context</h2>
+                <p>Why DDD is neccessary?</p>
+                <!--
+                <ul>
+                    <li>Design is something Oral</li>
+                    <li>The fall of IT Architects with the Agile Age</li>
+                    <li>UML didn´t survive</li>
+                </ul>
+                -->
+                <img src="images/poll.jpg" width="25%" />
+            </section>
+            <section>
+                <section>
+                    <h2>From the beginning</h2>
+                    <img src="images/software-life-cycle.png" width="50%" />
+
+                    <br />
+                </section>
+                <section>
+                    <h2>From the beginning</h2>
+                    <p>What activities require more time in your projects?</p>
+                    <!--
+                    <ul>
+                        <li>Design is something Oral</li>
+                        <li>The fall of IT Architects with the Agile Age</li>
+                        <li>UML didn´t survive</li>
+                    </ul>
+                    -->
+                    <img src="images/poll.jpg" width="25%" />
+                </section>
+                <!--
+                https://docs.aws.amazon.com/whitepapers/latest/microservices-on-aws/microservices-on-aws.html
+                -->
+                <section>
+                    <h2>From the beginning</h2>
+                    <img src="images/microservice-design.png" width="70%" />
+
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://d1.awsstatic.com/whitepapers/microservices-on-aws.pdf</small>
+                </section>
+                <section>
+                    <h2>From the beginning</h2>
+                    <img src="images/serverless-design.png" width="100%" />
+
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://aws.amazon.com/es/architecture/icons/</small>
+                </section>
+            </section>
+
+            <section>
+                <h2>What is DDD?</h2>
+                <p>
+                    Domain-driven design (DDD) is the concept that the structure and language of software code
+                    (class names, class methods, class variables) should match the business domain.
+                </p>
+                <p>
+                    Source: Wikipedia
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+        Reveal.configure(
+            { showNotes: true },
+            { showNotes: 'separate-page' },
+            { pdfMaxPagesPerSlide: 1 }
+        );
+    </script>
+</body>
+
 </html>
