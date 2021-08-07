@@ -47,16 +47,8 @@
                     <li>Context</li>
                     <li>What is DDD?</li>
                     <li>DDD Process</li>
-                    <li>Activities</li>
-                    <!--
-                    <li>Event Storming</li>
-                    -->
+                    <li>Techniques</li>
                     <li>Libraries</li>
-                    <!--
-                    <li>Onion Architecture</li>
-                    <li>Jmolecules</li>
-                    <li>ArchUnit</li>
-                    -->
                 </ul>
             </section>
             <section>
@@ -124,11 +116,26 @@
                     <img src="images/poll.jpg" width="25%" />
                 </section>
                 -->
+                <!--
+                https://martinfowler.com/bliki/AnemicDomainModel.html
+                https://martinfowler.com/bliki/BoundedContext.html
+                https://blog.pragmatists.com/domain-driven-design-vs-anemic-model-how-do-they-differ-ffdee9371a86
+                -->
+                <section>
+                    <h2>Context</h2>
+                    <p>
+                        Or maybe your design suffer with: <strong>Anemic Domain Model</strong>
+                    </p>
+                    <!--
+                    The fundamental horror of this anti-pattern is that
+                    it's so contrary to the basic idea of object-oriented design;
+                    which is to combine data and process together.
+                    -->
+                    <img src="images/anemic-domain-model.jpg" width="60%" />
+                </section>
             </section>
 
             <section>
-
-
                 <section>
                     <h2>What is DDD?</h2>
                     <p>
@@ -142,6 +149,76 @@
                 <section>
                     <h2>What is DDD?</h2>
                     <img src="images/ddd.png" width="80%" />
+                </section>
+                <section>
+                    <h2>What is DDD?</h2>
+                    <p>Core elements:</p>
+                    <ul>
+                        <li>Value Objects</li>
+                        <li>Entities</li>
+                        <li>Agreggate Root</li>
+                    </ul>
+                </section>
+                <!--
+                https://martinfowler.com/bliki/ValueObject.html
+                https://en.wikipedia.org/wiki/Value_object
+                -->
+                <section>
+                    <h2>What is DDD?</h2>
+                    <p>Value Object</p>
+                    <p>
+                        A value object is a small object that represents a simple entity whose equality is not based on
+                        identity: i.e. two value objects are equal when they have the same value, not necessarily being
+                        the same object.
+                    </p>
+                    <p>
+                        <strong>Examples:</strong> Objects representing an amount of money or a date range
+                    </p>
+                </section>
+                <section>
+                    <h2>What is DDD?</h2>
+                    <p>Entity</p>
+                    <p>
+
+                    </p>
+                </section>
+                <section>
+                    <h2>What is DDD?</h2>
+                    <p>Agreggate Root</p>
+                    <p>
+
+                    </p>
+                </section>
+            </section>
+            <!--
+            https://github.com/ddd-crew/ddd-starter-modelling-process
+            -->
+            <section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Domain-Driven Design Starter Modelling Process:</p>
+                    <img src="images/ddd-starter-modelling-process.png" width="80%" />
+                    <br />
+                    <small><strong>Source:</strong> <a
+                            href="https://github.com/ddd-crew/ddd-starter-modelling-process">https://github.com/ddd-crew/ddd-starter-modelling-process</a></small>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Techniques</h2>
+                    <ul>
+                        <li>Event-Storming</li>
+                        <li>Onion Architecture</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Libraries</h2>
+                    <ul>
+                        <li>ArchUnit</li>
+                        <li>Jmolecules</li>
+                    </ul>
                 </section>
             </section>
         </div>
