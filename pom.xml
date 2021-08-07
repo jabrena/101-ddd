@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.springframework.data.examples</groupId>
+	<artifactId>spring-data-jdbc-examples</artifactId>
+	<version>2.0.0.BUILD-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<name>Spring Data JDBC - Examples</name>
+	<description>Sample projects for Spring Data JDBC</description>
+	<url>https://projects.spring.io/spring-data-jdbc</url>
+
+	<modules>
+		<module>basics</module>
+		<module>jmolecules</module>
+	</modules>
+</project>
