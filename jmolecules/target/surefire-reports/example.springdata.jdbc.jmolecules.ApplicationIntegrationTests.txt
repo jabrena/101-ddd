@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: example.springdata.jdbc.jmolecules.ApplicationIntegrationTests
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.581 s - in example.springdata.jdbc.jmolecules.ApplicationIntegrationTests

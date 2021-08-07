@@ -1,9 +1,0 @@
-example/springdata/jdbc/jmolecules/customer/Customers.class
-example/springdata/jdbc/jmolecules/order/Order$OrderId.class
-example/springdata/jdbc/jmolecules/order/Orders.class
-example/springdata/jdbc/jmolecules/order/Order.class
-example/springdata/jdbc/jmolecules/customer/Customer$CustomerId.class
-example/springdata/jdbc/jmolecules/order/LineItem.class
-example/springdata/jdbc/jmolecules/customer/Address.class
-example/springdata/jdbc/jmolecules/customer/Customer.class
-example/springdata/jdbc/jmolecules/Application.class
