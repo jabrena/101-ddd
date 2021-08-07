@@ -25,7 +25,7 @@
                 <h2>101 DDD</h2>
                 <img src="images/ddd-chino.jpg" width="70%" />
                 <p>
-                    and why it is not a chinese tale.
+                    reviewing the added value from DDD.
                 </p>
             </section>
             <section>
@@ -42,14 +42,16 @@
             -->
             <section>
                 <h2>Agenda</h2>
-                <ul>
+                <ol>
                     <li>Who I am</li>
                     <li>Context</li>
                     <li>What is DDD?</li>
                     <li>DDD Process</li>
                     <li>Techniques</li>
                     <li>Libraries</li>
-                </ul>
+                    <li>Impact in the teams</li>
+                    <li>References</li>
+                </ol>
             </section>
             <section>
                 <section>
@@ -179,15 +181,41 @@
                     <h2>What is DDD?</h2>
                     <p>Entity</p>
                     <p>
-
+                        In a data model context,
+                        describes the structure of data regardless of the stored form.
                     </p>
                 </section>
+                <!--
+                https://martinfowler.com/tags/domain%20driven%20design.html
+                https://martinfowler.com/bliki/DDD_Aggregate.html
+                -->
                 <section>
                     <h2>What is DDD?</h2>
                     <p>Agreggate Root</p>
                     <p>
-
+                        A collection of entities or value objects that
+                        are related to each other through a Aggregate Root object
                     </p>
+                </section>
+                <section>
+                    <h2>What is DDD?</h2>
+                    <p>Example:</p>
+                    <img src="images/aggregate-root1.png" width="50%" />
+                    <small><strong>Source:</strong>
+                        <a
+                            href="https://khalilstemmler.com/articles/typescript-domain-driven-design/aggregate-design-persistence/">
+                            https://khalilstemmler.com/articles/typescript-domain-driven-design/aggregate-design-persistence/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>What is DDD?</h2>
+                    <p>Example:</p>
+                    <img src="images/aggregate-root2.png" width="80%" />
+                    <small><strong>Source:</strong>
+                        <a href="https://kalele.io/modeling-aggregates-with-ddd-and-entity-framework/">
+                            https://kalele.io/modeling-aggregates-with-ddd-and-entity-framework/</a></small>
+
                 </section>
             </section>
             <!--
@@ -202,6 +230,69 @@
                     <small><strong>Source:</strong> <a
                             href="https://github.com/ddd-crew/ddd-starter-modelling-process">https://github.com/ddd-crew/ddd-starter-modelling-process</a></small>
                 </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Understand</p>
+                    <p>
+                        Align our focus with the organisation's business model, the needs of its users, and its short,
+                        medium, and long-term goals.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Discover</p>
+                    <p>
+                        Discover the domain visually and collaboratively.
+                    </p>
+                    <p>
+                        This is the most crucial aspect of DDD. You cannot skip discovery. If your whole team doesn't
+                        build up a good understanding of the domain, all software decisions will be misguided.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Decompose</p>
+                    <p>
+                        Decompose the domain into sub-domains - loosely-coupled parts of the domain.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Connect</p>
+                    <p>
+                        Connect the sub-domains into a loosely-coupled architecture which fulfills end-to-end business
+                        use-cases.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Strategize</p>
+                    <p>
+                        Strategically map out your sub-domains to identify core domains: the parts of the domain which
+                        have the greatest potential for business differentiation or strategic significance.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Organise</p>
+                    <p>
+                        Organise autonomous teams that are optimised for fast flow and aligned with context boundaries.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Define</p>
+                    <p>
+                        Define the roles and responsibilities of each bounded context.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD Process</h2>
+                    <p>Code</p>
+                    <p>
+                        Code the domain model.
+                    </p>
+                </section>
             </section>
             <section>
                 <section>
@@ -211,6 +302,79 @@
                         <li>Onion Architecture</li>
                     </ul>
                 </section>
+                <!--
+                https://www.eventstorming.com/
+                https://en.wikipedia.org/wiki/Event_storming
+                -->
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Event-Storming</p>
+                    <img src="images/event-storming.png" />
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Event-Storming</p>
+                    <p>
+                        Event storming is a workshop-based method to quickly find out what is happening in the domain.
+                        The result is expressed in sticky notes on a wide wall.
+                        The business process is "stormed out" as a series of domain events which are denoted as orange
+                        stickies.
+                        Event storming can be used as a means for business process modeling and requirements
+                        engineering.
+                        The basic idea is to bring together software developers and domain experts and learn from each
+                        other.
+                    </p>
+                </section>
+                <!--
+                https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
+                -->
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <img src="images/clean-architecture.jpg" width="60%" />
+                    <small><strong>Source:</strong>
+                        https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html</small>
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <ul>
+                        <li>
+                            The domain package is the core of the application. It consists of two parts.
+                            The domainModels packages contain the domain entities.
+                            The packages in domainServices contains services that use the entities in the domainModel
+                            packages.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <ul>
+                        <li>
+                            The applicationServices packages contain services and configuration to run the application
+                            and use cases.
+                            It can use the items of the domain package but there must not be any
+                            dependency from the domain to the application packages.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <ul>
+                        <li>
+                            The adapter package contains logic to connect to external systems and/or infrastructure. No
+                            adapter may
+                            depend on another adapter. Adapters can use both the items of the domain as well as the
+                            application
+                            packages. Vice versa, neither the domain nor the application packages must contain
+                            dependencies
+                            on any
+                            adapter package.
+                        </li>
+                    </ul>
+                </section>
             </section>
             <section>
                 <section>
@@ -218,7 +382,42 @@
                     <ul>
                         <li>ArchUnit</li>
                         <li>Jmolecules</li>
+                        <li>Spring Data JDBC</li>
                     </ul>
+                </section>
+                <section>
+                    <h2>ArchUnit</h2>
+                </section>
+                <section>
+                    <h2>Jmolecules</h2>
+                    <p>General overview:</p>
+                    <img src="images/jmolecules.png" />
+                    <small>
+                        <strong>Source:</strong>
+                        https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
+                    </small>
+                </section>
+                <section>
+                    <h2>Jmolecules</h2>
+                    <p>Layers:</p>
+                    <img src="images/jmolecules2.png" />
+                    <small>
+                        <strong>Source:</strong>
+                        https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
+                    </small>
+                </section>
+                <section>
+                    <h2>Jmolecules</h2>
+                    <p>Annotations:</p>
+                    <ul>
+                        <li>@DomainModelRing</li>
+                        <li>@DomainServiceRing</li>
+                        <li>@ApplicationServiceRing</li>
+                        <li>@InfrastructureRing</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Spring Data JDBC</h2>
                 </section>
             </section>
         </div>
