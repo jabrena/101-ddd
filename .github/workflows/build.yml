@@ -13,9 +13,7 @@ jobs:
         with:
           java-version: 16
       - name: Build with Maven Wrapper
-        run: |
-          ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-          ./mvnw test -B
+        run: ./mvnw test -B
       - name: Publish Test Report
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
