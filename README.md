@@ -4,6 +4,9 @@
 
 [![](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jabrena/101-ddd)
 
+## Slides
+
+**How to run in local:**
 
 ```
 cd docs
@@ -11,7 +14,15 @@ python3 -m http.server
 python -m SimpleHTTPServer
 ```
 
-# References
+## Examples
+
+**How to run in local:**
+
+```
+mvn clean test
+```
+
+## References
 
 - https://github.com/spring-projects/spring-data-examples/tree/main/jdbc/jmolecules
 - https://github.com/odrotbohm/spring-events-deep-dive
