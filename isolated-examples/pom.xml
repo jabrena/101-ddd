@@ -3,19 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.design.jab</groupId>
-	<artifactId>101-ddd</artifactId>
+	<artifactId>isolated-examples</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
-	<name>101-ddd</name>
-	<description>101-ddd</description>
-
-	<properties>
-		<java.version>16</java.version>
-	</properties>
-
 	<modules>
-		<module>isolated-examples</module>
+		<module>spring-data-jdbc</module>
+		<module>spring-data-jdbc-jmolecules</module>
 	</modules>
 </project>

@@ -10,10 +10,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<name>Spring Data JDBC - jMolecules Example</name>
-	<groupId>org.springframework.data.examples</groupId>
+	<groupId>org.design.jab</groupId>
 	<artifactId>spring-data-jdbc-jmolecules</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<name>Spring Data JDBC - jMolecules Example</name>
 
 	<properties>
 		<!-- <spring-data-bom.version>2021.0.0-SNAPSHOT</spring-data-bom.version> -->
