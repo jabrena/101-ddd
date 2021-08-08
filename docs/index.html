@@ -388,11 +388,67 @@
                 </section>
                 <section>
                     <h2>ArchUnit</h2>
+                    <p>ArchUnit is a free, simple and extensible library for checking the architecture of your Java code
+                        using any plain Java unit test framework.</p>
+                    <img src="images/archunit-logo.png" />
+                    <small><strong>Website:</strong> https://www.archunit.org/</small>
+                </section>
+                <section>
+                    <h2>ArchUnit</h2>
+                    <p>Maven dependencies:</p>
+                    <pre class="stretch"><code data-trim data-noescape>
+
+< dependency>
+    < groupId>com.tngtech.archunit< /groupId>
+    < artifactId>archunit< /artifactId>
+    < version>${archunit.version}< /version>
+    < scope>test< /scope>
+< /dependency>
+< dependency>
+    < groupId>com.tngtech.archunit< /groupId>
+    < artifactId>archunit-junit5-engine< /artifactId>
+    < version>${archunit.version}< /version>
+< /dependency>
+< dependency>
+    < groupId>com.tngtech.archunit< /groupId>
+    < artifactId>archunit-junit5< /artifactId>
+    < version>${archunit.version}< /version>
+< /dependency>
+
+                    </code></pre>
+                    <small><strong>Maven:</strong> https://mvnrepository.com/artifact/com.tngtech.archunit</small>
                 </section>
                 <section>
                     <h2>Jmolecules</h2>
                     <p>
-                        Architectural abstractions for Java. Goals:
+                        Architectural abstractions for Java.
+                    </p>
+                    <img src="images/jmolecules-logo.png" />
+                </section>
+                <section>
+                    <h2>Jmolecules</h2>
+                    <p>Maven dependencies:</p>
+                    <pre><code data-trim data-noescape>
+
+< dependency>
+    < groupId>org.jmolecules< /groupId>
+    < artifactId>jmolecules-ddd< /artifactId>
+    < version>${jmolecules.version}< /version>
+< /dependency>
+< dependency>
+    < groupId>org.jmolecules< /groupId>
+    < artifactId>jmolecules-onion-architecture< /artifactId>
+    < version>${jmolecules.version}< /version>
+< /dependency>
+
+
+                    </code></pre>
+                    <small><strong>Maven:</strong> https://mvnrepository.com/artifact/org.jmolecules</small>
+                </section>
+                <section>
+                    <h2>Jmolecules</h2>
+                    <p>
+                        Goals:
                     </p>
                     <ul>
                         <li>
@@ -400,7 +456,8 @@
                             concept.
                         </li>
                         <li>
-                            Make it easy for the human reader to determine what kind of architectural concepts a given
+                            Make it easy for the human reader to determine what kind of architectural concepts a
+                            given
                             piece of code is.
                         </li>
                         <li>
