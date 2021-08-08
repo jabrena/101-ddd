@@ -2,8 +2,6 @@
 
 [![Java CI](https://github.com/jabrena/101-ddd/actions/workflows/build.yml/badge.svg)](https://github.com/jabrena/101-ddd/actions/workflows/build.yml)
 
-[![](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jabrena/101-ddd)
-
 ## Slides
 
 **How to run in local:**
@@ -16,10 +14,16 @@ python -m SimpleHTTPServer
 
 ## Examples
 
+**How to run in Gitpod:**
+
+[![](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jabrena/101-ddd)
+
 **How to run in local:**
 
 ```
-mvn clean test
+java -version
+sdk install java 16.0.1.hs-adpt
+mvnw clean test
 ```
 
 ## References
