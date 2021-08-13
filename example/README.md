@@ -20,6 +20,11 @@ Technical requirements:
 Code implemented with Java 16 features
 Code implemented with Onion Architecture in mind
 ```
+
 ## Bounded Contexts
 
 ![](../docs/images/es-example-bounded-contests.png)
+
+![](../docs/images/jmolecules.png)
+
+![](../docs/images/jmolecules2.png)
