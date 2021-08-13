@@ -1,4 +1,4 @@
-package com.jab.ddd;
+package com.ddd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

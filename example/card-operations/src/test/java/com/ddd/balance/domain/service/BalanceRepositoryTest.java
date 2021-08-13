@@ -1,4 +1,4 @@
-package com.jab.ddd.domain.service;
+package com.ddd.balance.domain.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 
-import com.jab.ddd.domain.model.Balance;
-import com.jab.ddd.domain.model.Customer;
+import com.ddd.balance.domain.model.Balance;
+import com.ddd.balance.domain.model.Customer;
+import com.ddd.balance.domain.service.BalanceRepository;
+import com.ddd.balance.domain.service.CustomerRepository;
 
 import static org.assertj.core.api.BDDAssertions.then;
 

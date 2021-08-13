@@ -1,4 +1,4 @@
-package com.jab.ddd.domain.model;
+package com.ddd.balance.domain.model;
 
 import java.math.BigDecimal;
 import java.util.Optional;
