@@ -14,8 +14,17 @@ public record Balance (
     Long balanceId, 
 
     @Column("BALANCE")
-    BigDecimal BALANCE,
+    BigDecimal balance,
 
     @Column("ID_CUSTOMER")
     Long customerId
-) {}
+
+) {
+
+    public Balance witddraw(BigDecimal amount) {
+        return new Balance(
+            this.balanceId(),
+            this.balance().subtract(amount),
+            this.customerId());
+    }
+}
