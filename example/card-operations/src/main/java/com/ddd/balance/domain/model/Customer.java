@@ -1,4 +1,4 @@
-package com.jab.ddd.domain.model;
+package com.ddd.balance.domain.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;

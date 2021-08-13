@@ -1,6 +1,9 @@
-package com.jab.ddd.domain.model;
+package com.ddd.balance.domain.model;
 
 import java.math.BigDecimal;
+
+import com.ddd.balance.domain.model.Balance;
+import com.ddd.balance.domain.model.Customer;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,9 +1,9 @@
-package com.jab.ddd.application;
+package com.ddd.balance.application;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import com.jab.ddd.domain.model.Balance;
+import com.ddd.balance.domain.model.Balance;
 
 public interface BalanceService {
     

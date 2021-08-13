@@ -1,10 +1,10 @@
-package com.jab.ddd.application;
+package com.ddd.balance.application;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import com.jab.ddd.domain.model.Balance;
-import com.jab.ddd.domain.service.BalanceRepository;
+import com.ddd.balance.domain.model.Balance;
+import com.ddd.balance.domain.service.BalanceRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
