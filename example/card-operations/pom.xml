@@ -15,7 +15,6 @@
 	<version>0.1.0-SNAPSHOT</version>
 
 	<name>Card Operations</name>
-	<description>Sample project demonstrating Spring Data JDBC features</description>
 
 	<dependencies>
 		<dependency>
