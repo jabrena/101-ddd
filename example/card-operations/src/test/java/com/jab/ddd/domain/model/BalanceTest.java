@@ -9,7 +9,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 public class BalanceTest {
     
     @Test
-    public void given_balance_when_withdrew_then_Ok() {
+    public void given_balance_when_withdraw_then_Ok() {
 
         //Given
         Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
@@ -21,5 +21,4 @@ public class BalanceTest {
         //Then
         then(balance.balanceId()).isNotNull();
     }
-
 }
