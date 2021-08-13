@@ -1,6 +1,7 @@
 package com.jab.ddd.application;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import com.jab.ddd.domain.model.Balance;
 import com.jab.ddd.domain.service.BalanceRepository;
@@ -15,10 +16,18 @@ public class BalanceServiceImpl implements BalanceService {
     private BalanceRepository balanceRepository;
  
     @Override
-    public Balance witddraw(Long idCustomer, BigDecimal quantity) {
-        Balance currentBalance = balanceRepository.findById(idCustomer)
-            .orElseThrow(() -> new RuntimeException("Not found balance"));
+    public Optional<Balance> witdhdraw(Long idCustomer, BigDecimal quantity) {
+
+        Optional<Balance> currentBalance = balanceRepository.findById(idCustomer);
         
-        return balanceRepository.save(currentBalance.witddraw(quantity));
+        if (currentBalance.isPresent()) {
+
+            Optional<Balance> newBalance = currentBalance.get().witdhdraw(quantity);
+
+            if(newBalance.isPresent()) {
+                return Optional.ofNullable(balanceRepository.save(newBalance.get()));
+            }
+        }
+        return Optional.empty();
     }
 }

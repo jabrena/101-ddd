@@ -36,10 +36,27 @@ public class BalanceServiceTest {
         Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, current.subtract(amount), 1L));
 
         //When
-        Balance newBalance = balanceService.witddraw(1L, amount);
+        Optional<Balance> newBalance = balanceService.witdhdraw(1L, amount);
 
         //Then
-        then(newBalance).isNotNull();
+        then(newBalance.isPresent()).isTrue();
+        then(newBalance.get().balance()).isEqualTo(current.subtract(amount));
+    }
+
+    @Test
+    public void given_service_when_withdraw_if_not_enough_then_Ko() {
+
+        //Given
+        BigDecimal current = new BigDecimal("0.0");
+        BigDecimal amount = new BigDecimal("10.0");
+        Balance mockedBalance = new Balance(1L, current, 1L);
+        Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
+
+        //When
+        Optional<Balance> newBalance = balanceService.witdhdraw(1L, amount);
+
+        //Then
+        then(newBalance.isPresent()).isFalse();
     }
 
 }
