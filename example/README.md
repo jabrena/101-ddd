@@ -36,6 +36,9 @@ mvn clean test jacoco:report
 
 ![](../docs/images/jmolecules2.png)
 
+---
+
+https://www.archunit.org/userguide/html/000_Index.html#_onion_architecture
 
 In an "Onion Architecture" (also known as "Hexagonal Architecture" or "Ports and Adapters"), we can define domain packages and adapter packages as follows.
 
