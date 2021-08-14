@@ -16,6 +16,6 @@ public class ArchitectureOnionTest {
                     .domainModels("..domain.model..")
                     .domainServices("..domain.service..")
                     .applicationServices("..application..")
-                    .adapter("REST", "..infrastructure.rest..");
+                    .adapter("rest", "..infrastructure.rest..");
 
 }

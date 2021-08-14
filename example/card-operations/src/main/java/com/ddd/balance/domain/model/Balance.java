@@ -1,7 +1,11 @@
 package com.ddd.balance.domain.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +17,9 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table("BALANCE")
 public record Balance (
 
-    @Id 
+    @Id
     @Column("ID_BALANCE")
-    Long balanceId, 
+    Long balanceId,
 
     @Column("BALANCE")
     BigDecimal balance,
@@ -30,18 +34,25 @@ public record Balance (
     //Add invariants rules
     private Boolean validateRules(BigDecimal amount) {
 
-        if(this.balance.compareTo(amount) <= -1) {
-            
-        }
+        //Enough Money to Widhdraw
+        BiPredicate<BigDecimal, BigDecimal> rule_enough_money =
+                (currentBalance, quantity) -> currentBalance.compareTo(quantity) >= 0;
 
-        return true;
+        //TODO No more widthdraw in last hour
+        //TODO Review limit
+
+        return rule_enough_money.test(this.balance, amount);
     }
 
     public Optional<Balance> witdhdraw(BigDecimal amount) {
 
-        return Optional.of(new Balance(
-            this.balanceId(),
-            this.balance().subtract(amount),
-            this.customerId()));
+        if (validateRules(amount)) {
+            return Optional.of(new Balance(
+                    this.balanceId(),
+                    this.balance().subtract(amount),
+                    this.customerId()));
+        }
+
+        return Optional.empty();
     }
 }

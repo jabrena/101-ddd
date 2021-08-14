@@ -22,7 +22,7 @@ python -m SimpleHTTPServer
 
 ```
 java -version
-sdk install java 16.0.1.hs-adpt
+sdk env
 mvnw clean test
 ```
 
