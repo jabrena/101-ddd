@@ -31,7 +31,7 @@ public class BalanceRepositoryTest {
         BigDecimal currentBalance = new BigDecimal("100.0");
 
         //When
-        Balance balance = new Balance(null, currentBalance, customerSaved.id(), Timestamp.from(Instant.now()));
+        Balance balance = new Balance(null, currentBalance, customerSaved.id(), Timestamp.from(Instant.now()), null);
         var balanceSaved = balances.save(balance);
 
         //Then
