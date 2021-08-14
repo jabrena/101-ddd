@@ -11,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -36,7 +38,8 @@ public class BalanceControllerTest {
         BigDecimal request = new BigDecimal("10.00");
         BigDecimal response = new BigDecimal("90.00");
         when(balanceService.witdhdraw(any(), eq(request)))
-                .thenReturn(Optional.of(new Balance(1l, response, 1l)));
+                .thenReturn(Optional.of(new Balance(1l, response, 1l,
+                                Timestamp.from(Instant.now()))));
 
         //When
         //Then

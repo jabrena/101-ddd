@@ -1,9 +1,10 @@
 package com.ddd.balance.application;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Optional;
 
-import com.ddd.balance.application.BalanceService;
 import com.ddd.balance.domain.model.Balance;
 import com.ddd.balance.domain.service.BalanceRepository;
 
@@ -16,10 +17,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.mockito.ArgumentMatchers.any;
 
-
 @SpringBootTest
 public class BalanceServiceTest {
-    
+
     @MockBean
     private BalanceRepository balanceRepository;
 
@@ -32,9 +32,9 @@ public class BalanceServiceTest {
         //Given
         BigDecimal current = new BigDecimal("100.0");
         BigDecimal amount = new BigDecimal("10.0");
-        Balance mockedBalance = new Balance(1L, current, 1L);
+        Balance mockedBalance = new Balance(1L, current, 1L, null);
         Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
-        Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, current.subtract(amount), 1L));
+        Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, current.subtract(amount), 1L, Timestamp.from(Instant.now())));
 
         //When
         Optional<Balance> newBalance = balanceService.witdhdraw(1L, amount);
@@ -50,7 +50,7 @@ public class BalanceServiceTest {
         //Given
         BigDecimal current = new BigDecimal("0.0");
         BigDecimal amount = new BigDecimal("10.0");
-        Balance mockedBalance = new Balance(1L, current, 1L);
+        Balance mockedBalance = new Balance(1L, current, 1L, null);
         Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
 
         //When

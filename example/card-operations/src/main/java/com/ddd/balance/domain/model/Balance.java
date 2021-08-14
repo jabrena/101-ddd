@@ -1,10 +1,13 @@
 package com.ddd.balance.domain.model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.BiPredicate;
+import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,23 +27,61 @@ public record Balance (
     BigDecimal balance,
 
     @Column("ID_CUSTOMER")
-    Long customerId
+    Long customerId,
 
+    @Column("LAST_UPDATE")
+    Timestamp lastUpdate
 ) {
 
     private static Logger logger = LoggerFactory.getLogger(Balance.class);
 
+    //TODO Maybe, it is necessary to move that part to another class
     //Add invariants rules
     private Boolean validateRules(BigDecimal amount) {
 
         //Rule 1: Enough Money to Withdraw
-        BiPredicate<BigDecimal, BigDecimal> rule_enough_money =
-                (currentBalance, quantity) -> currentBalance.compareTo(quantity) >= 0;
+        BiPredicate<Balance, BigDecimal> rule_enough_money =
+                (currentBalance, quantity) -> currentBalance.balance().compareTo(quantity) >= 0;
 
         //TODO Only one withdraw in last hour
+        BiPredicate<Balance, BigDecimal> rule_only_one_withdraw_in_the_same_hour =
+                (currentBalance, quantity) -> {
+
+                    //No withdraw previously
+                    if(Objects.isNull(currentBalance.lastUpdate)) {
+                        logger.trace("No withdraw previously");
+                        return true;
+                    }
+
+                    //Multiple withdraw previously
+                    Timestamp now = Timestamp.from(Instant.now());
+                    if(currentBalance.lastUpdate.before(now)) {
+                        logger.trace("At least, one withdraw previously");
+
+                        long diffHours = ChronoUnit.HOURS.between(
+                                now.toLocalDateTime(), currentBalance.lastUpdate.toLocalDateTime());
+
+                        if (diffHours >= 1) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                };
+
         //TODO Review limit
 
-        return rule_enough_money.test(this.balance, amount);
+        //Execute all rules
+        record ruleTuple(Balance balance, BigDecimal amount) {}
+        Long count = Stream.of(new ruleTuple(this, amount))
+                .filter(t -> rule_enough_money.test(t.balance(), t.amount))
+                .filter(t -> rule_only_one_withdraw_in_the_same_hour.test(t.balance(), t.amount))
+                .count();
+
+        if(count == 1) {
+            return true;
+        }
+        return false;
     }
 
     //TODO: Optional or Either(vavr)
@@ -50,7 +91,8 @@ public record Balance (
             return Optional.of(new Balance(
                     this.balanceId(),
                     this.balance().subtract(amount),
-                    this.customerId()));
+                    this.customerId(),
+                    Timestamp.from(Instant.now())));
         }
 
         return Optional.empty();

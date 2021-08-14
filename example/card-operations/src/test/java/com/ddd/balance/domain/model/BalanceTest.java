@@ -1,11 +1,12 @@
 package com.ddd.balance.domain.model;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
-import com.ddd.balance.domain.model.Balance;
-import com.ddd.balance.domain.model.Customer;
-
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -18,7 +19,7 @@ public class BalanceTest {
         //Given
         Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
         BigDecimal currentBalance = new BigDecimal("100.0");
-        Balance balance = new Balance(1L, currentBalance, customer.id());
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null);
 
         //When
         BigDecimal amount = new BigDecimal("10.00");
@@ -39,7 +40,7 @@ public class BalanceTest {
         //Given
         Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
         BigDecimal currentBalance = new BigDecimal("100.0");
-        Balance balance = new Balance(1L, currentBalance, customer.id());
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null);
 
         //When
         BigDecimal amount = new BigDecimal("101.00");
@@ -49,15 +50,34 @@ public class BalanceTest {
         then(newBalance.isPresent()).isFalse();
     }
 
+    //TODO It is necessary to mock time internally in Balance Object
+    @Disabled
     @Test
-    public void demo() {
+    public void given_balance_when_withdraw_multiple_times_in_last_hour_then_Ko() {
 
-        System.out.println("10 > 0 = " + new BigDecimal("10.00").compareTo(BigDecimal.ZERO));
-        System.out.println(new BigDecimal("10.00").compareTo(BigDecimal.ZERO) == 1);
-        System.out.println("10.00 = 10.0 = " + new BigDecimal("10.00").compareTo(new BigDecimal("10.0")));
-        System.out.println(new BigDecimal("10.00").compareTo(new BigDecimal("10.0")) == 0);
-        System.out.println("10.00 < 20.0 = " + new BigDecimal("10.00").compareTo(new BigDecimal("20.0")));
-        System.out.println(new BigDecimal("10.00").compareTo(new BigDecimal("20.0")) == -1);
+        //Given
 
+        //First Withdraw
+        Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
+        BigDecimal currentBalance = new BigDecimal("100.0");
+
+        Timestamp creationTs = Timestamp.from(Instant.now().minus(30, ChronoUnit.MINUTES));
+        Balance balance = new Balance(1L, currentBalance, customer.id(), creationTs);
+
+        BigDecimal amount = new BigDecimal("10.00");
+        Optional<Balance> newBalance = balance.withdraw(amount);
+        Timestamp ts1 = newBalance.get().lastUpdate();
+
+        //When
+
+        //Second Withdraw
+        BigDecimal amount2 = new BigDecimal("10.00");
+        Optional<Balance> newBalance2 = newBalance.get().withdraw(amount2);
+        Timestamp ts2 = newBalance2.get().lastUpdate();
+
+        //Then
+        then(newBalance2.isPresent()).isFalse();
+        then(ts1).isEqualTo(ts2);
     }
+
 }
