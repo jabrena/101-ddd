@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,17 +33,18 @@ public record Balance (
     //Add invariants rules
     private Boolean validateRules(BigDecimal amount) {
 
-        //Enough Money to Widhdraw
+        //Rule 1: Enough Money to Withdraw
         BiPredicate<BigDecimal, BigDecimal> rule_enough_money =
                 (currentBalance, quantity) -> currentBalance.compareTo(quantity) >= 0;
 
-        //TODO No more widthdraw in last hour
+        //TODO Only one withdraw in last hour
         //TODO Review limit
 
         return rule_enough_money.test(this.balance, amount);
     }
 
-    public Optional<Balance> witdhdraw(BigDecimal amount) {
+    //TODO: Optional or Either(vavr)
+    public Optional<Balance> withdraw(BigDecimal amount) {
 
         if (validateRules(amount)) {
             return Optional.of(new Balance(

@@ -22,7 +22,7 @@ public class BalanceTest {
 
         //When
         BigDecimal amount = new BigDecimal("10.00");
-        Optional<Balance> newBalance = balance.witdhdraw(amount);
+        Optional<Balance> newBalance = balance.withdraw(amount);
 
         //Then
         then(newBalance.isPresent()).isTrue();
@@ -43,7 +43,7 @@ public class BalanceTest {
 
         //When
         BigDecimal amount = new BigDecimal("101.00");
-        Optional<Balance> newBalance = balance.witdhdraw(amount);
+        Optional<Balance> newBalance = balance.withdraw(amount);
 
         //Then
         then(newBalance.isPresent()).isFalse();
