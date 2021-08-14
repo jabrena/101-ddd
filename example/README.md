@@ -21,6 +21,13 @@ Code implemented with Java 16 features
 Code implemented with Onion Architecture in mind
 ```
 
+## How to test
+
+```java
+mvn clean test jacoco:report
+```
+
+
 ## Bounded Contexts
 
 ![](../docs/images/es-example-bounded-contests.png)
