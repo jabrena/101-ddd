@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.time.Instant;
 
 import com.ddd.balance.domain.model.Balance;
 import com.ddd.balance.domain.model.Customer;
-import com.ddd.balance.domain.service.BalanceRepository;
-import com.ddd.balance.domain.service.CustomerRepository;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
@@ -31,9 +31,9 @@ public class BalanceRepositoryTest {
         BigDecimal currentBalance = new BigDecimal("100.0");
 
         //When
-        Balance balance = new Balance(null, currentBalance, customerSaved.id());
+        Balance balance = new Balance(null, currentBalance, customerSaved.id(), Timestamp.from(Instant.now()));
         var balanceSaved = balances.save(balance);
-        
+
         //Then
         then(balanceSaved.balanceId()).isNotNull();
     }
