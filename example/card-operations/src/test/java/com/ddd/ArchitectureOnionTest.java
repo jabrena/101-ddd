@@ -1,4 +1,4 @@
-package com.ddd.balance;
+package com.ddd;
 
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
