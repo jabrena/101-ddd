@@ -30,7 +30,10 @@ public record Balance (
     Long customerId,
 
     @Column("LAST_UPDATE")
-    Timestamp lastUpdate
+    Timestamp lastUpdate,
+
+    @Column("WITHDRAW_LIMIT")
+    BigDecimal withdrawLimit
 ) {
 
     private static Logger logger = LoggerFactory.getLogger(Balance.class);
@@ -43,7 +46,7 @@ public record Balance (
         BiPredicate<Balance, BigDecimal> rule_enough_money =
                 (currentBalance, quantity) -> currentBalance.balance().compareTo(quantity) >= 0;
 
-        //TODO Only one withdraw in last hour
+        //Rule 2: Only one withdraw in last hour
         BiPredicate<Balance, BigDecimal> rule_only_one_withdraw_in_the_same_hour =
                 (currentBalance, quantity) -> {
 
@@ -69,13 +72,22 @@ public record Balance (
                     return false;
                 };
 
-        //TODO Review limit
+        //Rule 3: Review limit
+        BiPredicate<Balance, BigDecimal> rule_limit =
+                (currentBalance, quantity) -> {
+                    if (Objects.isNull(currentBalance.withdrawLimit)) {
+                        return true;
+                    }
+
+                    return currentBalance.withdrawLimit().compareTo(quantity) != -1;
+                };
 
         //Execute all rules
         record ruleTuple(Balance balance, BigDecimal amount) {}
         Long count = Stream.of(new ruleTuple(this, amount))
                 .filter(t -> rule_enough_money.test(t.balance(), t.amount))
                 .filter(t -> rule_only_one_withdraw_in_the_same_hour.test(t.balance(), t.amount))
+                .filter(t -> rule_limit.test(t.balance, amount))
                 .count();
 
         if(count == 1) {
@@ -92,7 +104,8 @@ public record Balance (
                     this.balanceId(),
                     this.balance().subtract(amount),
                     this.customerId(),
-                    Timestamp.from(Instant.now())));
+                    Timestamp.from(Instant.now()),
+                    this.withdrawLimit));
         }
 
         return Optional.empty();

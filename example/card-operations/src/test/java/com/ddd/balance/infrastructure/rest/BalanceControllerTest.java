@@ -39,7 +39,7 @@ public class BalanceControllerTest {
         BigDecimal response = new BigDecimal("90.00");
         when(balanceService.witdhdraw(any(), eq(request)))
                 .thenReturn(Optional.of(new Balance(1l, response, 1l,
-                                Timestamp.from(Instant.now()))));
+                                Timestamp.from(Instant.now()), null)));
 
         //When
         //Then

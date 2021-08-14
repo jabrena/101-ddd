@@ -19,7 +19,7 @@ public class BalanceTest {
         //Given
         Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
         BigDecimal currentBalance = new BigDecimal("100.0");
-        Balance balance = new Balance(1L, currentBalance, customer.id(), null);
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null, null);
 
         //When
         BigDecimal amount = new BigDecimal("10.00");
@@ -40,7 +40,7 @@ public class BalanceTest {
         //Given
         Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
         BigDecimal currentBalance = new BigDecimal("100.0");
-        Balance balance = new Balance(1L, currentBalance, customer.id(), null);
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null, null);
 
         //When
         BigDecimal amount = new BigDecimal("101.00");
@@ -62,7 +62,7 @@ public class BalanceTest {
         BigDecimal currentBalance = new BigDecimal("100.0");
 
         Timestamp creationTs = Timestamp.from(Instant.now().minus(30, ChronoUnit.MINUTES));
-        Balance balance = new Balance(1L, currentBalance, customer.id(), creationTs);
+        Balance balance = new Balance(1L, currentBalance, customer.id(), creationTs, null);
 
         BigDecimal amount = new BigDecimal("10.00");
         Optional<Balance> newBalance = balance.withdraw(amount);
@@ -80,4 +80,55 @@ public class BalanceTest {
         then(ts1).isEqualTo(ts2);
     }
 
+    @Test
+    public void given_balance_when_withdraw_without_limit_then_Ko() {
+
+        //Given
+        Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
+        BigDecimal currentBalance = new BigDecimal("100.0");
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null, null);
+
+        //When
+        BigDecimal amount = new BigDecimal("10.00");
+        Optional<Balance> newBalance = balance.withdraw(amount);
+
+        //Then
+        then(newBalance.isPresent()).isTrue();
+        newBalance.stream().forEach(value -> {
+            then(value.balance())
+                    .usingComparator(BigDecimal::compareTo)
+                    .isEqualByComparingTo(currentBalance.subtract(amount));
+        });
+    }
+
+    @Test
+    public void given_balance_when_withdraw_with_limit_then_Ko() {
+
+        //Given
+        Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
+        BigDecimal currentBalance = new BigDecimal("100.0");
+        BigDecimal limit = new BigDecimal("10.00");
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null, limit);
+
+        //When
+        BigDecimal amount = new BigDecimal("11.00");
+        Optional<Balance> newBalance = balance.withdraw(amount);
+
+        //Then
+        then(newBalance.isPresent()).isFalse();
+    }
+
+    @Test
+    public void demo() {
+
+        System.out.println("10 > 0 = " + new BigDecimal("10.00").compareTo(BigDecimal.ZERO));
+        System.out.println(new BigDecimal("10.00").compareTo(BigDecimal.ZERO) == 1);
+        System.out.println("10.00 = 10.0 = " + new BigDecimal("10.00").compareTo(new BigDecimal("10.0")));
+        System.out.println(new BigDecimal("10.00").compareTo(new BigDecimal("10.0")) == 0);
+        System.out.println("10.00 < 20.0 = " + new BigDecimal("10.00").compareTo(new BigDecimal("20.0")));
+        System.out.println(new BigDecimal("10.00").compareTo(new BigDecimal("20.0")) == -1);
+
+        System.out.println("10 <= 11 = " + new BigDecimal("10.00").compareTo(new BigDecimal("11.00")));
+
+    }
 }

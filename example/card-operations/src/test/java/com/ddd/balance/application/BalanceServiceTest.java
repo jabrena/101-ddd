@@ -32,9 +32,9 @@ public class BalanceServiceTest {
         //Given
         BigDecimal current = new BigDecimal("100.0");
         BigDecimal amount = new BigDecimal("10.0");
-        Balance mockedBalance = new Balance(1L, current, 1L, null);
+        Balance mockedBalance = new Balance(1L, current, 1L, null, null);
         Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
-        Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, current.subtract(amount), 1L, Timestamp.from(Instant.now())));
+        Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, current.subtract(amount), 1L, Timestamp.from(Instant.now()), null));
 
         //When
         Optional<Balance> newBalance = balanceService.witdhdraw(1L, amount);
@@ -50,7 +50,7 @@ public class BalanceServiceTest {
         //Given
         BigDecimal current = new BigDecimal("0.0");
         BigDecimal amount = new BigDecimal("10.0");
-        Balance mockedBalance = new Balance(1L, current, 1L, null);
+        Balance mockedBalance = new Balance(1L, current, 1L, null, null);
         Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
 
         //When
