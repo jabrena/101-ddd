@@ -23,7 +23,7 @@ public class BalanceServiceImpl implements BalanceService {
 
         if (currentBalance.isPresent()) {
 
-            Optional<Balance> newBalance = currentBalance.get().witdhdraw(quantity);
+            Optional<Balance> newBalance = currentBalance.get().withdraw(quantity);
 
             if(newBalance.isPresent()) {
                 return Optional.ofNullable(balanceRepository.save(newBalance.get()));
