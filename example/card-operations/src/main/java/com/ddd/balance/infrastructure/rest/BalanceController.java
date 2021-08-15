@@ -27,21 +27,40 @@ public class BalanceController {
     private BalanceService balanceService;
 
     @PostMapping("/withdraw")
-    public ResponseEntity<WidthDrawResponse> withdraw(
-            @Valid @RequestBody WidthDrawRequest widthDrawRequest,
+    public ResponseEntity<WithdrawResponse> withdraw(
+            @Valid @RequestBody WithdrawRequest withdrawRequest,
             BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body(new WidthDrawResponse(false));
+            return ResponseEntity.badRequest().body(new WithdrawResponse(false));
         }
 
-        Optional<Balance> witdhdraw = balanceService.witdhdraw(widthDrawRequest.idCustomer(), widthDrawRequest.amount());
+        Optional<Balance> witdhdraw = balanceService.witdhdraw(withdrawRequest.idCustomer(), withdrawRequest.amount());
 
         //TODO Refactor the usage of Optional
         if(witdhdraw.isPresent()) {
-            return ResponseEntity.ok().body(new WidthDrawResponse(true));
+            return ResponseEntity.ok().body(new WithdrawResponse(true));
         } else {
-            return ResponseEntity.ok().body(new WidthDrawResponse(false));
+            return ResponseEntity.ok().body(new WithdrawResponse(false));
+        }
+    }
+
+    @PostMapping("/withdrawlimit")
+    public ResponseEntity<WithdrawResponse> withdrawlimit(
+            @Valid @RequestBody WithdrawLimitRequest withdrawRequest,
+            BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().body(new WithdrawResponse(false));
+        }
+
+        Optional<Balance> witdhdrawlimit = balanceService.witdhdrawLimit(withdrawRequest.idCustomer(), withdrawRequest.amount());
+
+        //TODO Refactor the usage of Optional
+        if(witdhdrawlimit.isPresent()) {
+            return ResponseEntity.ok().body(new WithdrawResponse(true));
+        } else {
+            return ResponseEntity.ok().body(new WithdrawResponse(false));
         }
     }
 

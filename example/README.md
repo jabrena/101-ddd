@@ -32,6 +32,12 @@ mvn clean test jacoco:report
 
 ![](../docs/images/es-example-bounded-contests.png)
 
+**Card Operations:**
+
+- [x] Withdraw
+- [x] Limit
+- [ ] Repay
+
 ![](../docs/images/jmolecules.png)
 
 ![](../docs/images/jmolecules2.png)

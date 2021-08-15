@@ -60,4 +60,22 @@ public class BalanceServiceTest {
         then(newBalance.isPresent()).isFalse();
     }
 
+    @Test
+    public void given_service_when_withdrawLimit_firstTime_then_Ok() {
+
+        //Given
+        BigDecimal current = new BigDecimal("100.0");
+        BigDecimal withDrawlimit = new BigDecimal("10.0");
+        Balance mockedBalance = new Balance(1L, current, 1L, null, null);
+        Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
+        Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, current, 1L, Timestamp.from(Instant.now()), withDrawlimit));
+
+        //When
+        Optional<Balance> newBalance = balanceService.witdhdrawLimit(1L, withDrawlimit);
+
+        //Then
+        then(newBalance.isPresent()).isTrue();
+        then(newBalance.get().withdrawLimit()).isEqualTo(withDrawlimit);
+    }
+
 }

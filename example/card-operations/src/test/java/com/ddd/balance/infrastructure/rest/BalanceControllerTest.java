@@ -32,7 +32,7 @@ public class BalanceControllerTest {
     private BalanceService balanceService;
 
     @Test
-    public void given_balanceController_when_happy_path_Ok() throws Exception {
+    public void given_balanceController_when_withdraw_happy_path_Ok() throws Exception {
 
         //Given
         BigDecimal request = new BigDecimal("10.00");
@@ -43,8 +43,8 @@ public class BalanceControllerTest {
 
         //When
         //Then
-        WidthDrawRequest widthDrawRequest = new WidthDrawRequest(1L, request);
-        WidthDrawResponse expectedResponse = new WidthDrawResponse(true);
+        WithdrawRequest widthDrawRequest = new WithdrawRequest(1L, request);
+        WithdrawResponse expectedResponse = new WithdrawResponse(true);
         this.mockMvc.perform(post("/api/withdraw")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
@@ -53,6 +53,27 @@ public class BalanceControllerTest {
                 .andExpect(content().json(asJsonString(expectedResponse)));
     }
 
+    @Test
+    public void given_balanceController_when_withdrawLimit_happy_path_Ok() throws Exception {
+
+        //Given
+        BigDecimal balance = new BigDecimal("100.00");
+        BigDecimal limit = new BigDecimal("10.00");
+        when(balanceService.witdhdrawLimit(any(), eq(limit)))
+                .thenReturn(Optional.of(new Balance(1l, balance, 1l,
+                        Timestamp.from(Instant.now()), limit)));
+
+        //When
+        //Then
+        WithdrawLimitRequest widthLimitDrawRequest = new WithdrawLimitRequest(1L, limit);
+        WithdrawLimitResponse expectedResponse = new WithdrawLimitResponse(true);
+        this.mockMvc.perform(post("/api/withdrawlimit")
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .content(asJsonString(widthLimitDrawRequest)))
+                .andExpect(status().isOk())
+                .andExpect(content().json(asJsonString(expectedResponse)));
+    }
 
     public static String asJsonString(Object obj) {
         try {

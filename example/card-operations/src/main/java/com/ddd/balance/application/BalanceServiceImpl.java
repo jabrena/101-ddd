@@ -31,4 +31,21 @@ public class BalanceServiceImpl implements BalanceService {
         }
         return Optional.empty();
     }
+
+    @Override
+    public Optional<Balance> witdhdrawLimit(Long idCustomer, BigDecimal limit) {
+
+        Optional<Balance> currentBalance = balanceRepository.findById(idCustomer);
+
+        if (currentBalance.isPresent()) {
+
+            Optional<Balance> newLimit = currentBalance.get().configureWithdrawLimit(limit);
+
+            if(newLimit.isPresent()) {
+                return Optional.ofNullable(balanceRepository.save(newLimit.get()));
+            }
+
+        }
+        return Optional.empty();
+    }
 }
