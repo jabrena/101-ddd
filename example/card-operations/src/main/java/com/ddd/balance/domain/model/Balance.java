@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
-import org.springframework.lang.Nullable;
 
 @Table("BALANCE")
 public record Balance (
@@ -40,7 +39,6 @@ public record Balance (
     private static Logger logger = LoggerFactory.getLogger(Balance.class);
 
     //TODO Maybe, it is necessary to move that part to another class
-    //Add invariants rules
     private Boolean validateRules(BigDecimal amount) {
 
         //Rule 1: Enough Money to Withdraw
@@ -112,6 +110,7 @@ public record Balance (
         return Optional.empty();
     }
 
+    //TODO: Optional or Either(vavr)
     public Optional<Balance> configureWithdrawLimit(BigDecimal limit) {
 
         if (Objects.isNull(this.withdrawLimit)) {
@@ -126,7 +125,18 @@ public record Balance (
         return Optional.empty();
     }
 
+    //TODO: Optional or Either(vavr)
     public Optional<Balance> repay(BigDecimal amount) {
+
+        if (Objects.isNull(this.withdrawLimit)) {
+            return Optional.of(new Balance(
+                    this.balanceId,
+                    this.balance.add(amount),
+                    this.customerId,
+                    Timestamp.from(Instant.now()),
+                    this.withdrawLimit));
+        }
+
         return Optional.empty();
     }
 }
