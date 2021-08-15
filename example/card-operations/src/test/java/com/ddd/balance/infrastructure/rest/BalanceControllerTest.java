@@ -75,6 +75,28 @@ public class BalanceControllerTest {
                 .andExpect(content().json(asJsonString(expectedResponse)));
     }
 
+    @Test
+    public void given_balanceController_when_repay_happy_path_Ok() throws Exception {
+
+        //Given
+        BigDecimal currentBalance = new BigDecimal("100.00");
+        BigDecimal amount = new BigDecimal("10.00");
+        when(balanceService.repay(any(), eq(amount)))
+                .thenReturn(Optional.of(new Balance(1l, currentBalance.add(amount), 1l,
+                        Timestamp.from(Instant.now()), null)));
+
+        //When
+        //Then
+        RepayRequest repayRequest = new RepayRequest(1L, amount);
+        RepayResponse expectedResponse = new RepayResponse(true);
+        this.mockMvc.perform(post("/api/repay")
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .content(asJsonString(repayRequest)))
+                .andExpect(status().isOk())
+                .andExpect(content().json(asJsonString(expectedResponse)));
+    }
+
     public static String asJsonString(Object obj) {
         try {
             return new ObjectMapper().writeValueAsString(obj);

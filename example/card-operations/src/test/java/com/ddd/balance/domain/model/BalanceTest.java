@@ -150,4 +150,21 @@ public class BalanceTest {
         //Then
         then(newBalance.isPresent()).isFalse();
     }
+
+    @Test
+    public void given_balance_when_repay_then_Ok() {
+
+        //Given
+        Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
+        BigDecimal currentBalance = new BigDecimal("100.0");
+        Balance balance = new Balance(1L, currentBalance, customer.id(), Timestamp.from(Instant.now()), null);
+
+        //When
+        BigDecimal amount = new BigDecimal("10.00");
+        Optional<Balance> newBalance = balance.repay(amount);
+
+        //Then
+        then(newBalance.isPresent()).isTrue();
+        then(newBalance.get().balance()).isEqualByComparingTo(currentBalance.add(amount));
+    }
 }

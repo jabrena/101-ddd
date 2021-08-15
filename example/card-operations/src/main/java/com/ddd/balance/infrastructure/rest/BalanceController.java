@@ -64,4 +64,23 @@ public class BalanceController {
         }
     }
 
+    @PostMapping("/repay")
+    public ResponseEntity<RepayResponse> repay(
+            @Valid @RequestBody RepayRequest repayRequest,
+            BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().body(new RepayResponse(false));
+        }
+
+        Optional<Balance> witdhdrawlimit = balanceService.repay(repayRequest.idCustomer(), repayRequest.amount());
+
+        //TODO Refactor the usage of Optional
+        if(witdhdrawlimit.isPresent()) {
+            return ResponseEntity.ok().body(new RepayResponse(true));
+        } else {
+            return ResponseEntity.ok().body(new RepayResponse(false));
+        }
+    }
+
 }
