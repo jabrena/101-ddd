@@ -125,4 +125,8 @@ public record Balance (
 
         return Optional.empty();
     }
+
+    public Optional<Balance> repay(BigDecimal amount) {
+        return Optional.empty();
+    }
 }
