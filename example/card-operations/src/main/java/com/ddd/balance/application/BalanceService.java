@@ -9,5 +9,5 @@ public interface BalanceService {
 
     Optional<Balance> witdhdraw(Long idCustomer, BigDecimal amount);
     Optional<Balance> witdhdrawLimit(Long idCustomer, BigDecimal limit);
-
+    Optional<Balance> repay(Long idCustomer, BigDecimal amount);
 }

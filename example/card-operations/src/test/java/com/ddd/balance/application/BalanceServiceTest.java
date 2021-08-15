@@ -78,4 +78,22 @@ public class BalanceServiceTest {
         then(newBalance.get().withdrawLimit()).isEqualTo(withDrawlimit);
     }
 
+    @Test
+    public void given_service_when_repay_then_Ok() {
+
+        //Given
+        BigDecimal currentBalance = new BigDecimal("100.0");
+        BigDecimal amount = new BigDecimal("10.0");
+        Balance mockedBalance = new Balance(1L, currentBalance, 1L, null, null);
+        Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.of(mockedBalance));
+        Mockito.when(balanceRepository.save(any())).thenReturn(new Balance(1L, currentBalance.add(amount), 1L, Timestamp.from(Instant.now()), null));
+
+        //When
+        Optional<Balance> newBalance = balanceService.repay(1L, amount);
+
+        //Then
+        then(newBalance.isPresent()).isTrue();
+        then(newBalance.get().balance()).isEqualTo(currentBalance.add(amount));
+    }
+
 }
