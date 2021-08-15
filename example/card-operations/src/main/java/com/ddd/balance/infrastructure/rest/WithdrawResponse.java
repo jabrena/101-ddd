@@ -1,5 +1,5 @@
 package com.ddd.balance.infrastructure.rest;
 
-public record WidthDrawResponse(
+public record WithdrawResponse(
     Boolean result
 ) { }
