@@ -110,4 +110,8 @@ public record Balance (
 
         return Optional.empty();
     }
+
+    public Optional<Balance> setLimit(BigDecimal limit) {
+        return null;
+    }
 }

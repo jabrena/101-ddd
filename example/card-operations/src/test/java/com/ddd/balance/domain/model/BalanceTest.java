@@ -119,16 +119,19 @@ public class BalanceTest {
     }
 
     @Test
-    public void demo() {
+    public void given_balance_when_set_limit_first_time_then_Ok() {
 
-        System.out.println("10 > 0 = " + new BigDecimal("10.00").compareTo(BigDecimal.ZERO));
-        System.out.println(new BigDecimal("10.00").compareTo(BigDecimal.ZERO) == 1);
-        System.out.println("10.00 = 10.0 = " + new BigDecimal("10.00").compareTo(new BigDecimal("10.0")));
-        System.out.println(new BigDecimal("10.00").compareTo(new BigDecimal("10.0")) == 0);
-        System.out.println("10.00 < 20.0 = " + new BigDecimal("10.00").compareTo(new BigDecimal("20.0")));
-        System.out.println(new BigDecimal("10.00").compareTo(new BigDecimal("20.0")) == -1);
+        //Given
+        Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
+        BigDecimal currentBalance = new BigDecimal("100.0");
+        Balance balance = new Balance(1L, currentBalance, customer.id(), null, null);
 
-        System.out.println("10 <= 11 = " + new BigDecimal("10.00").compareTo(new BigDecimal("11.00")));
+        //When
+        BigDecimal limit = new BigDecimal("50.00");
+        Optional<Balance> newBalance = balance.setLimit(limit);
 
+        //Then
+        then(newBalance.isPresent()).isFalse();
     }
+
 }
