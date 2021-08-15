@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.lang.Nullable;
 
 @Table("BALANCE")
 public record Balance (
@@ -101,9 +102,9 @@ public record Balance (
 
         if (validateRules(amount)) {
             return Optional.of(new Balance(
-                    this.balanceId(),
-                    this.balance().subtract(amount),
-                    this.customerId(),
+                    this.balanceId,
+                    this.balance.subtract(amount),
+                    this.customerId,
                     Timestamp.from(Instant.now()),
                     this.withdrawLimit));
         }
@@ -111,7 +112,17 @@ public record Balance (
         return Optional.empty();
     }
 
-    public Optional<Balance> setLimit(BigDecimal limit) {
-        return null;
+    public Optional<Balance> configureWithdrawLimit(BigDecimal limit) {
+
+        if (Objects.isNull(this.withdrawLimit)) {
+            return Optional.of(new Balance(
+                    this.balanceId,
+                    this.balance,
+                    this.customerId,
+                    Timestamp.from(Instant.now()),
+                    limit));
+        }
+
+        return Optional.empty();
     }
 }

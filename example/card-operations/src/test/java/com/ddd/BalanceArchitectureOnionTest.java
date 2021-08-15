@@ -8,7 +8,7 @@ import com.tngtech.archunit.lang.ArchRule;
 import static com.tngtech.archunit.library.Architectures.onionArchitecture;
 
 @AnalyzeClasses(packages = "com.ddd.balance", importOptions = {ImportOption.DoNotIncludeTests.class})
-public class ArchitectureOnionTest {
+public class BalanceArchitectureOnionTest {
 
     @ArchTest
     static final ArchRule follow_onion_architecture_structure =

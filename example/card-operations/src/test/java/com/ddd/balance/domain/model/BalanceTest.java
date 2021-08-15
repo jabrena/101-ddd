@@ -128,10 +128,26 @@ public class BalanceTest {
 
         //When
         BigDecimal limit = new BigDecimal("50.00");
-        Optional<Balance> newBalance = balance.setLimit(limit);
+        Optional<Balance> newBalance = balance.configureWithdrawLimit(limit);
+
+        //Then
+        then(newBalance.isPresent()).isTrue();
+    }
+
+    @Test
+    public void given_balance_when_set_limit_second_time_then_Ko() {
+
+        //Given
+        Customer customer = new Customer(1L, "Juan Antonio", "Breña Moral", "50401080H");
+        BigDecimal currentBalance = new BigDecimal("100.0");
+        BigDecimal withDrawLimit = new BigDecimal("50.00");
+        Balance balance = new Balance(1L, currentBalance, customer.id(), Timestamp.from(Instant.now()), withDrawLimit);
+
+        //When
+        BigDecimal limit = new BigDecimal("50.00");
+        Optional<Balance> newBalance = balance.configureWithdrawLimit(limit);
 
         //Then
         then(newBalance.isPresent()).isFalse();
     }
-
 }
