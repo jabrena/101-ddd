@@ -2,9 +2,9 @@ package com.ddd.balance.domain.model;
 
 import org.springframework.context.ApplicationEvent;
 
-public class MoneyWithDrewEvent extends ApplicationEvent {
+public class MoneyRepaidEvent extends ApplicationEvent {
 
-    public MoneyWithDrewEvent(Balance source) {
+    public MoneyRepaidEvent(Balance source) {
         super(source);
     }
 

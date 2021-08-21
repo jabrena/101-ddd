@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 import com.ddd.balance.domain.model.Balance;
+import com.ddd.balance.domain.model.MoneyRepaidEvent;
 import com.ddd.balance.domain.model.MoneyWithDrewEvent;
 import com.ddd.balance.domain.service.BalanceRepository;
 
@@ -29,9 +30,9 @@ public class BalanceServiceImpl implements BalanceService {
                 .flatMap(currentBalance -> currentBalance.withdraw(quantity))
                 .map(balanceRepository::save);
 
-        // Event Publishing
-        newBalance.ifPresent(b -> {
-            applicationEventPublisher.publishEvent(new MoneyWithDrewEvent(b));
+        //TODO Review how to integrate event publising at Domain level
+        newBalance.ifPresent(balance -> {
+            applicationEventPublisher.publishEvent(new MoneyWithDrewEvent(balance));
         });
 
         return newBalance;
@@ -50,8 +51,14 @@ public class BalanceServiceImpl implements BalanceService {
     @Override
     public Optional<Balance> repay(Long idCustomer, BigDecimal amount) {
 
-        return balanceRepository.findById(idCustomer)
+        var newBalance = balanceRepository.findById(idCustomer)
                 .flatMap(currentBalance -> currentBalance.repay(amount))
                 .map(balanceRepository::save);
+
+        newBalance.ifPresent(balance -> {
+            applicationEventPublisher.publishEvent(new MoneyRepaidEvent(balance));
+        });
+
+        return newBalance;
     }
 }
