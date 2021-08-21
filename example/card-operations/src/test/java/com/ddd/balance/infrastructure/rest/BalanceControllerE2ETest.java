@@ -46,6 +46,27 @@ public class BalanceControllerE2ETest {
 		then(result.getBody()).contains(asJsonString(expectedResponse));
 	}
 
+	@Sql(scripts = "classpath:/test_data.sql")
+	@Test
+	public void given_balanceController_when_repay_happy_path_Ok() {
+
+		//Given
+		String address = "http://localhost:" + port + "/api/repay";
+		BigDecimal amount = new BigDecimal("10.00");
+		WithdrawRequest widthDrawRequest = new WithdrawRequest(1L, amount);
+
+		HttpHeaders headers = new HttpHeaders();
+		HttpEntity<WithdrawRequest> request = new HttpEntity<>(widthDrawRequest, headers);
+
+		//When
+		ResponseEntity<String> result = this.restTemplate.postForEntity(address, request, String.class);
+
+		//Then
+		RepayResponse expectedResponse = new RepayResponse(true);
+		then(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+		then(result.getBody()).contains(asJsonString(expectedResponse));
+	}
+
 	public static String asJsonString(Object obj) {
 		try {
 			return new ObjectMapper().writeValueAsString(obj);

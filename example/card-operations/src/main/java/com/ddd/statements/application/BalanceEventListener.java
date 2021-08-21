@@ -1,6 +1,7 @@
 package com.ddd.statements.application;
 
 import com.ddd.balance.domain.model.Balance;
+import com.ddd.balance.domain.model.MoneyRepaidEvent;
 import com.ddd.balance.domain.model.MoneyWithDrewEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,14 @@ public class BalanceEventListener {
 
     @TransactionalEventListener
     @Transactional(propagation = REQUIRES_NEW)
-    public void addStatement(MoneyWithDrewEvent event) {
+    public void addStatementNegative(MoneyWithDrewEvent event) {
+        Balance source = event.getSource();
+        logger.info("New Event Received: {}", source);
+    }
+
+    @TransactionalEventListener
+    @Transactional(propagation = REQUIRES_NEW)
+    public void addStatementPositive(MoneyRepaidEvent event) {
         Balance source = event.getSource();
         logger.info("New Event Received: {}", source);
     }
