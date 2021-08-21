@@ -45,6 +45,21 @@ public class BalanceServiceTest {
     }
 
     @Test
+    public void given_service_when_withdraw_and_not_found_customer_then_Ok() {
+
+        //Given
+        Long idCustomer = 99L;
+        BigDecimal amount = new BigDecimal("10.0");
+        Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.empty());
+
+        //When
+        Optional<Balance> newBalance = balanceService.witdhdraw(1L, amount);
+
+        //Then
+        then(newBalance.isPresent()).isFalse();
+    }
+
+    @Test
     public void given_service_when_withdraw_if_not_enough_then_Ko() {
 
         //Given
@@ -59,6 +74,7 @@ public class BalanceServiceTest {
         //Then
         then(newBalance.isPresent()).isFalse();
     }
+
 
     @Test
     public void given_service_when_withdrawLimit_firstTime_then_Ok() {
@@ -79,6 +95,21 @@ public class BalanceServiceTest {
     }
 
     @Test
+    public void given_service_when_withdrawLimit_and_not_found_customer_then_Ok() {
+
+        //Given
+        Long idCustomer = 99L;
+        BigDecimal amount = new BigDecimal("10.0");
+        Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.empty());
+
+        //When
+        Optional<Balance> newBalance = balanceService.witdhdrawLimit(1L, amount);
+
+        //Then
+        then(newBalance.isPresent()).isFalse();
+    }
+
+    @Test
     public void given_service_when_repay_then_Ok() {
 
         //Given
@@ -96,4 +127,18 @@ public class BalanceServiceTest {
         then(newBalance.get().balance()).isEqualTo(currentBalance.add(amount));
     }
 
+    @Test
+    public void given_service_when_repay_and_not_found_customer_then_Ok() {
+
+        //Given
+        Long idCustomer = 99L;
+        BigDecimal amount = new BigDecimal("10.0");
+        Mockito.when(balanceRepository.findById(any())).thenReturn(Optional.empty());
+
+        //When
+        Optional<Balance> newBalance = balanceService.repay(1L, amount);
+
+        //Then
+        then(newBalance.isPresent()).isFalse();
+    }
 }
