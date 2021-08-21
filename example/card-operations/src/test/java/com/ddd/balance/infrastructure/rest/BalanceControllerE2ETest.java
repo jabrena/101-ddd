@@ -3,6 +3,7 @@ package com.ddd.balance.infrastructure.rest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -10,13 +11,18 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(
+		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+		properties = {"spring.datasource.data=classpath:/test_data.sql"})
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class BalanceControllerE2ETest {
 
 	@LocalServerPort
@@ -25,7 +31,6 @@ public class BalanceControllerE2ETest {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	@Sql(scripts = "classpath:/test_data.sql")
 	@Test
 	public void given_balanceController_when_withdraw_happy_path_Ok() {
 
@@ -46,7 +51,6 @@ public class BalanceControllerE2ETest {
 		then(result.getBody()).contains(asJsonString(expectedResponse));
 	}
 
-	@Sql(scripts = "classpath:/test_data.sql")
 	@Test
 	public void given_balanceController_when_repay_happy_path_Ok() {
 
