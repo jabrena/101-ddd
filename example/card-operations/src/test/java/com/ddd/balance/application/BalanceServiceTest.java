@@ -8,17 +8,25 @@ import java.util.Optional;
 import com.ddd.balance.domain.model.Balance;
 import com.ddd.balance.domain.service.BalanceRepository;
 
+import com.ddd.statements.application.BalanceEventListener;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Primary;
+import org.springframework.core.metrics.ApplicationStartup;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.mockito.ArgumentMatchers.any;
 
-@SpringBootTest
+@SpringBootTest()
 public class BalanceServiceTest {
+
+    //A way to disable Event processing from Statements
+    @MockBean
+    private BalanceEventListener balanceEventListener;
 
     @MockBean
     private BalanceRepository balanceRepository;
