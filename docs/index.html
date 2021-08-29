@@ -23,9 +23,13 @@
             <section>
                 <section>
                     <h2>101 DDD</h2>
-                    <img src="images/ball-of-mud.png" width="40%" />
                     <p>
-                        Mitigating the "Ball of mud" in your products with DDD.
+                        Mitigating the "Ball of mud" in your products/services with Domain Driven Design.
+                    </p>
+                    <img src="images/ball-of-mud.png" width="30%" />
+                    <p>
+                        <a href="https://twitter.com/juanantoniobm" target="_blank">@juanantoniobm</a>
+                        & <a href="https://twitter.com/LeXavTwit" target="_blank">@LeXavTwit</a>
                     </p>
                 </section>
                 <section>
@@ -52,15 +56,24 @@
                 <ol>
                     <li>Who I am</li>
                     <!-- <li>Context</li> -->
-                    <li>Timeline</li>
+                    <li>Goals</li>
+                    <!-- <li>Timeline</li> -->
                     <li>What is DDD?</li>
-                    <li>DDD 1: Building blocks</li>
+                    <li>Strategical DDD</li>
+                    <li>Tactical DDD</li>
                     <!-- <li>DDD Process</li> -->
-                    <li>Techniques</li>
-                    <li>Libraries</li>
-                    <li>Impact in the teams</li>
+                    <!-- <li>Techniques</li> -->
+                    <li>Implementing with DDD</li>
                     <li>References</li>
                 </ol>
+            </section>
+            <section>
+                <h2>Goals</h2>
+                <ul>
+                    <li>Design better projects</li>
+                    <li>Mitigate "the ball of mud"</li>
+                    <li>Increase the software maintenance</li>
+                </ul>
             </section>
             <section data-visibility="hidden">
                 <section>
@@ -140,7 +153,7 @@
                     <img src="images/anemic-domain-model.jpg" width="60%" />
                 </section>
             </section>
-            <section>
+            <section data-visibility="hidden">
                 <section>
                     <h2>Timeline</h2>
                     <img src="images/timeline.jpg" width="70%" />
@@ -180,16 +193,104 @@
                 </section>
                 <section>
                     <h2>What is DDD?</h2>
-                    <img src="images/ddd.png" width="80%" />
+                    <h3>DDD Ecosystem</h3>
+                    <img src="images/ddd-parts.png" width="100%" />
                 </section>
                 <section>
                     <h2>What is DDD?</h2>
-                    <img src="images/ddd-patterns2.png" width="80%" />
+                    <h3>Strategical DDD</h3>
+                    <img src="images/ddd-strategic.jpg" width="80%" />
+                </section>
+                <section>
+                    <h2>What is DDD?</h2>
+                    <h3>Tactical DDD</h3>
+                    <img src="images/ddd-tactical.png" width="70%" />
                 </section>
             </section>
             <section>
                 <section>
-                    <h2>DDD 1: Building blocks</h2>
+                    <h2>Strategic DDD</h2>
+                    <p>
+                        Define the Ubiquitous Language, the Bounded contexts and the Context maps
+                    </p>
+                    <img src="images/ddd-strategic.jpg" width="70%" />
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Concepts:</p>
+                    <ul>
+                        <li>The Ubiquitous Language</li>
+                        <li>The Bounded contexts</li>
+                        <li>The Context maps</li>
+                    </ul>
+                    <hr />
+                    <p>Tools:</p>
+                    <ul>
+                        <li>Event-Storming</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Ubiquitous Language</h3>
+                    <p>
+                        A language structured around the domain model and used by all team members within a
+                        bounded context to connect all the activities of the team with the software.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Bounded contexts</h3>
+                    <p>
+                        A description of a boundary (typically a subsystem, or the work of a particular team) within
+                        which a particular model is defined and applicable.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps</h3>
+                </section>
+                <!--
+                https://www.eventstorming.com/
+                https://en.wikipedia.org/wiki/Event_storming
+                -->
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Event-Storming</p>
+                    <img src="images/event-storming.png" />
+                </section>
+                <!--
+                https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd
+                -->
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Event-Storming</p>
+                    <p>
+                        Event storming is a workshop-based method to quickly find out what is happening in the
+                        domain.
+                        The result is expressed in sticky notes on a wide wall.
+                        The business process is "stormed out" as a series of domain events which are denoted as
+                        orange
+                        stickies.
+                        Event storming can be used as a means for business process modeling and requirements
+                        engineering.
+                        The basic idea is to bring together software developers and domain experts and learn
+                        from each
+                        other.
+                    </p>
+                </section>
+            </section>
+            <!--
+            https://docs.microsoft.com/en-us/azure/architecture/microservices/model/tactical-ddd
+            -->
+            <section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Tactical DDD is when you define your domain models with more precision.</p>
+                    <img src="images/ddd-tactical.png" width="60%" />
+                </section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Patterns:</p>
                     <ul>
                         <li>Value Objects</li>
                         <li>Entities</li>
@@ -201,7 +302,7 @@
                 https://en.wikipedia.org/wiki/Value_object
                 -->
                 <section>
-                    <h2>DDD 1: Building blocks</h2>
+                    <h2>Tactical DDD</h2>
                     <p>Value Object</p>
                     <p>
                         A value object is a small object that represents a simple entity whose equality is not
@@ -215,7 +316,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>DDD 1: Building blocks</h2>
+                    <h2>Tactical DDD</h2>
                     <p>Entity</p>
                     <p>
                         In a data model context,
@@ -227,7 +328,7 @@
                 https://martinfowler.com/bliki/DDD_Aggregate.html
                 -->
                 <section>
-                    <h2>DDD 1: Building blocks</h2>
+                    <h2>Tactical DDD</h2>
                     <p>Agreggate Root</p>
                     <p>
                         A collection of entities or value objects that
@@ -235,7 +336,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>DDD 1: Building blocks</h2>
+                    <h2>Tactical DDD</h2>
                     <p>Example:</p>
                     <img src="images/aggregate-root1.png" width="50%" />
                     <small><strong>Source:</strong>
@@ -246,7 +347,7 @@
                     </small>
                 </section>
                 <section>
-                    <h2>DDD 1: Building blocks</h2>
+                    <h2>Tactical DDD</h2>
                     <p>Example:</p>
                     <img src="images/aggregate-root2.png" width="80%" />
                     <small><strong>Source:</strong>
@@ -338,105 +439,17 @@
             </section>
             <section>
                 <section>
-                    <h2>Techniques</h2>
-                    <ul>
-                        <li>Event-Storming</li>
-                        <li>Onion Architecture</li>
-                    </ul>
-                </section>
-                <!--
-                https://www.eventstorming.com/
-                https://en.wikipedia.org/wiki/Event_storming
-                -->
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Event-Storming</p>
-                    <img src="images/event-storming.png" />
-                </section>
-                <!--
-                https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd
-                -->
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Event-Storming</p>
-                    <p>
-                        Event storming is a workshop-based method to quickly find out what is happening in the
-                        domain.
-                        The result is expressed in sticky notes on a wide wall.
-                        The business process is "stormed out" as a series of domain events which are denoted as
-                        orange
-                        stickies.
-                        Event storming can be used as a means for business process modeling and requirements
-                        engineering.
-                        The basic idea is to bring together software developers and domain experts and learn
-                        from each
-                        other.
-                    </p>
-                </section>
-                <!--
-                https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
-                -->
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <img src="images/onion-architecture.png" />
-                    <small><strong>Source:</strong>
-                        <a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
-                        </a>
-                    </small>
-                </section>
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <ul>
-                        <li>
-                            The domain package is the core of the application. It consists of two parts.
-                            The domainModels packages contain the domain entities.
-                            The packages in domainServices contains services that use the entities in the
-                            domainModel
-                            packages.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <ul>
-                        <li>
-                            The applicationServices packages contain services and configuration to run the
-                            application
-                            and use cases.
-                            It can use the items of the domain package but there must not be any
-                            dependency from the domain to the application packages.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <ul>
-                        <li>
-                            The adapter package contains logic to connect to external systems and/or
-                            infrastructure. No
-                            adapter may
-                            depend on another adapter. Adapters can use both the items of the domain as well as
-                            the
-                            application
-                            packages. Vice versa, neither the domain nor the application packages must contain
-                            dependencies
-                            on any
-                            adapter package.
-                        </li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h2>Libraries</h2>
+                    <h2>Implementing with DDD</h2>
+                    <p>Libraries:</p>
                     <ul>
                         <li>ArchUnit</li>
                         <li>Jmolecules</li>
                         <li>Spring Data JDBC</li>
+                    </ul>
+                    <hr />
+                    <li>Layouts:</li>
+                    <ul>
+                        <li>Onion architecture</li>
                     </ul>
                 </section>
                 <section>
@@ -615,6 +628,96 @@
                 </section>
                 <section>
                     <h2>Spring Data JDBC</h2>
+                </section>
+                <!--
+                https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
+                -->
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <img src="images/onion-architecture.png" />
+                    <small><strong>Source:</strong>
+                        <a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <ul>
+                        <li>
+                            The domain package is the core of the application. It consists of two parts.
+                            The domainModels packages contain the domain entities.
+                            The packages in domainServices contains services that use the entities in the
+                            domainModel
+                            packages.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <ul>
+                        <li>
+                            The applicationServices packages contain services and configuration to run the
+                            application
+                            and use cases.
+                            It can use the items of the domain package but there must not be any
+                            dependency from the domain to the application packages.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Techniques</h2>
+                    <p>Onion Architecture</p>
+                    <ul>
+                        <li>
+                            The adapter package contains logic to connect to external systems and/or
+                            infrastructure. No
+                            adapter may
+                            depend on another adapter. Adapters can use both the items of the domain as well as
+                            the
+                            application
+                            packages. Vice versa, neither the domain nor the application packages must contain
+                            dependencies
+                            on any
+                            adapter package.
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>References</h2>
+                    <ul>
+                        <li><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215"
+                                target="_blank">
+                                Domain-Driven Design: Tackling Complexity in the Heart of Software</a>&nbsp;Eric Evans
+                        </li>
+                        <li><a href="https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf"
+                                target="_blank">Domain-Driven Design Reference, Definitions and Pattern
+                                Summaries</a>&nbsp;Eric Evans
+                        </li>
+                        <li>
+                            <a href="https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577"
+                                target="_blank">Implementing Domain-Driven Design</a>&nbsp;Vaughn Vernon
+                        </li>
+                        <li><a href="https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420"
+                                target="_blank">Domain-Driven Design Destilled</a>&nbsp;Vaughn Vernon</li>
+                        <li>
+                            <a href="https://leanpub.com/introducing_eventstorming" target="_blank">Introducing
+                                EventStorming,
+                                An act of Deliberate Collective Learning</a>&nbsp;Alberto Brandolini
+                        </li>
+                        <li>
+                            <a href="https://gojko.net/books/specification-by-example/" target="_blank">Specification by
+                                Example</a>&nbsp;Gojko Adzic
+                        </li>
+                        <li>
+                            <a href="https://gojko.net/books/impact-mapping/" target="_blank">Impact
+                                Mapping</a>&nbsp;Gojko Adzic
+                        </li>
+                    </ul>
                 </section>
             </section>
             <section>
