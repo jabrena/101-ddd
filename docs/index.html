@@ -46,7 +46,7 @@
                     - Socrates
                 </section>
                 <section>
-                    <img src="images/conway.jpg" width="40%" />
+                    <img src="images/conway.png" width="30%" />
                     <blockquote> Any organization that designs a system (defined broadly) will produce a design whose
                         structure is a copy of the organization's communication structure.
                     </blockquote>
@@ -490,104 +490,97 @@
 
                 </section>
             </section>
-            <!--
-            https://github.com/ddd-crew/ddd-starter-modelling-process
-            -->
-            <section data-visibility="hidden">
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Domain-Driven Design Starter Modelling Process:</p>
-                    <img src="images/ddd-starter-modelling-process.png" width="80%" />
-                    <br />
-                    <small><strong>Source:</strong> <a
-                            href="https://github.com/ddd-crew/ddd-starter-modelling-process">https://github.com/ddd-crew/ddd-starter-modelling-process</a></small>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Understand</p>
-                    <p>
-                        Align our focus with the organisation's business model, the needs of its users, and its
-                        short,
-                        medium, and long-term goals.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Discover</p>
-                    <p>
-                        Discover the domain visually and collaboratively.
-                    </p>
-                    <p>
-                        This is the most crucial aspect of DDD. You cannot skip discovery. If your whole team
-                        doesn't
-                        build up a good understanding of the domain, all software decisions will be misguided.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Decompose</p>
-                    <p>
-                        Decompose the domain into sub-domains - loosely-coupled parts of the domain.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Connect</p>
-                    <p>
-                        Connect the sub-domains into a loosely-coupled architecture which fulfills end-to-end
-                        business
-                        use-cases.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Strategize</p>
-                    <p>
-                        Strategically map out your sub-domains to identify core domains: the parts of the domain
-                        which
-                        have the greatest potential for business differentiation or strategic significance.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Organise</p>
-                    <p>
-                        Organise autonomous teams that are optimised for fast flow and aligned with context
-                        boundaries.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Define</p>
-                    <p>
-                        Define the roles and responsibilities of each bounded context.
-                    </p>
-                </section>
-                <section>
-                    <h2>DDD Process</h2>
-                    <p>Code</p>
-                    <p>
-                        Code the domain model.
-                    </p>
-                </section>
-            </section>
             <section>
                 <section>
                     <h2>Implementing with DDD</h2>
+                    <p>Layouts:</p>
+                    <ul>
+                        <li>Onion architecture</li>
+                    </ul>
+                    <hr />
                     <p>Libraries:</p>
                     <ul>
                         <li>ArchUnit</li>
                         <li>Jmolecules</li>
                         <li>Spring Data JDBC</li>
                     </ul>
-                    <hr />
-                    <p>Layouts:</p>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>
+                        The Onion Architecture is an Architectural Pattern
+                        that enables maintainable and evolutionary
+                        enterprise systems.
+                    </p>
+                    <!-- <img src="images/onion-architecture.png" /> -->
+                    <small><strong>Source:</strong>
+                        <a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <img src="images/onion-architecture3.png" width="50%" />
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>Domain layer:</p>
                     <ul>
-                        <li>Onion architecture</li>
+                        <li>
+                            The domain package is the core of the application. It consists of two parts.
+                            The domainModels packages contain the domain entities.
+                            The packages in domainServices contains services that use the entities in the
+                            domainModel
+                            packages.
+                        </li>
                     </ul>
                 </section>
                 <section>
-                    <h2>ArchUnit</h2>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>Application layer:</p>
+                    <ul>
+                        <li>
+                            The applicationServices packages contain services and configuration to run the
+                            application
+                            and use cases.
+                            It can use the items of the domain package but there must not be any
+                            dependency from the domain to the application packages.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>Infrastructure layer:</p>
+                    <ul>
+                        <li>
+                            The adapter package contains logic to connect to external systems and/or
+                            infrastructure. No
+                            adapter may
+                            depend on another adapter. Adapters can use both the items of the domain as well as
+                            the
+                            application
+                            packages. Vice versa, neither the domain nor the application packages must contain
+                            dependencies
+                            on any
+                            adapter package.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>How to ensure that your team apply Onion architecture
+                        in an effective way?</p>
+                    <h1>🤔</h1>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>ArchUnit</h3>
                     <p>ArchUnit is a free, simple and extensible library for checking the architecture of your
                         Java code
                         using any plain Java unit test framework.</p>
@@ -595,8 +588,9 @@
                     <small><strong>Website:</strong> https://www.archunit.org/</small>
                 </section>
                 <section>
-                    <h2>ArchUnit</h2>
-                    <p>Maven dependencies:</p>
+                    <h2>Implementing with DDD</h2>
+                    <h3>ArchUnit</h3>
+                    <!-- <p>Maven dependencies:</p> -->
                     <pre class="stretch"><code data-trim data-noescape>
 
 < dependency>
@@ -619,6 +613,27 @@
                     </code></pre>
                     <small><strong>Maven:</strong>
                         https://mvnrepository.com/artifact/com.tngtech.archunit</small>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>ArchUnit</h3>
+                    <p>Example:</p>
+                    <pre><code data-trim data-noescape>
+@AnalyzeClasses(
+    packages = "com.ddd.balance",
+    importOptions = {ImportOption.DoNotIncludeTests.class})
+public class BalanceArchitectureOnionTest {
+
+    @ArchTest
+    static final ArchRule follow_onion_architecture_structure =
+            onionArchitecture()
+                    .domainModels("..domain.model..")
+                    .domainServices("..domain.service..")
+                    .applicationServices("..application..")
+                    .adapter("rest", "..infrastructure.rest..");
+
+}
+                    </code></pre>
                 </section>
                 <section>
                     <h2>Jmolecules</h2>
@@ -755,70 +770,19 @@
                         https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
                     </small>
                 </section>
+                <!--
                 <section>
                     <h2>Jmolecules</h2>
                     <p>jmolecules-onion-architecture:</p>
                     <img src="images/demo.png" />
                 </section>
+                -->
                 <section>
                     <h2>Spring Data JDBC</h2>
                 </section>
                 <!--
                 https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
                 -->
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <img src="images/onion-architecture.png" />
-                    <small><strong>Source:</strong>
-                        <a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
-                        </a>
-                    </small>
-                </section>
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <ul>
-                        <li>
-                            The domain package is the core of the application. It consists of two parts.
-                            The domainModels packages contain the domain entities.
-                            The packages in domainServices contains services that use the entities in the
-                            domainModel
-                            packages.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <ul>
-                        <li>
-                            The applicationServices packages contain services and configuration to run the
-                            application
-                            and use cases.
-                            It can use the items of the domain package but there must not be any
-                            dependency from the domain to the application packages.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Techniques</h2>
-                    <p>Onion Architecture</p>
-                    <ul>
-                        <li>
-                            The adapter package contains logic to connect to external systems and/or
-                            infrastructure. No
-                            adapter may
-                            depend on another adapter. Adapters can use both the items of the domain as well as
-                            the
-                            application
-                            packages. Vice versa, neither the domain nor the application packages must contain
-                            dependencies
-                            on any
-                            adapter package.
-                        </li>
-                    </ul>
-                </section>
             </section>
             <section>
                 <section>
