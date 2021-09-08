@@ -35,7 +35,7 @@
                 <section>
                     <h2>101 DDD</h2>
                     <p>Follow the talk from with your smartphone:</p>
-                    <img src="images/qrcode.png" width="50%" />
+                    <img src="images/qrcode.png" width="40%" />
                 </section>
             </section>
 
@@ -70,9 +70,9 @@
             <section>
                 <h2>Goals</h2>
                 <ul>
-                    <li>Design better projects</li>
-                    <li>Mitigate "the ball of mud"</li>
-                    <li>Increase the software maintenance</li>
+                    <li>Design software that teams like maintaining</li>
+                    <li>Mitigate "the ball of mud" effect</li>
+                    <li>Learn to use DDD in different project stages</li>
                 </ul>
             </section>
             <section data-visibility="hidden">
@@ -229,6 +229,20 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Ubiquitous Language</h3>
+                    <img src="images/ddd-ubiquitous-language.png">
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://blog.tekaris.com/blog/introduction-ubiquitous-language/</small>
+
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Ubiquitous Language</h3>
+                    <img src="images/ddd-ubiquitous-language2.jpg">
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Bounded contexts</h3>
                     <p>
                         A description of a boundary (typically a subsystem, or the work of a particular team) within
@@ -237,7 +251,52 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Bounded contexts</h3>
+                    <img src="images/ddd-bounded-context.png" width="60%">
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://martinfowler.com/bliki/BoundedContext.html</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps</h3>
+                    <p>
+                        Context Maps describe the contact between bounded contexts and teams with a collection of
+                        patterns. There are nine context map patterns and three different team relationships.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns:</h3>
+                    <img src="images/ddd-context-map-patterns.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://github.com/ddd-crew/context-mapping</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps team relationships</h3>
+                    <img src="images/ddd-context-map-team-relationships.png" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://github.com/ddd-crew/context-mapping</small>
+                </section>
+
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Domain Events</h3>
+                    <p>
+                        A domain event is a full-fledged part of the domain model, a representation of something
+                        that happened in the domain. Ignore irrelevant domain activity while making explicit the
+                        events that the domain experts want to track or be notified of, or which are associated
+                        with state change in the other model objects.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Does exist any tool?</h3>
+                    <h1>🤔</h1>
                 </section>
                 <!--
                 https://www.eventstorming.com/
@@ -268,6 +327,54 @@
                         other.
                     </p>
                 </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Example: Discovering Domain Events</p>
+                    <img src="images/event-storming-example1.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Example: Discovering Commands & Queries</p>
+                    <img src="images/event-storming-example2.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Example: Discovering Invariants</p>
+                    <img src="images/event-storming-example3.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Example: Discovering the bounded contexts</p>
+                    <img src="images/event-storming-example5.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Does exist any process?</h3>
+                    <h1>🤔</h1>
+                </section>
+                <!--
+                https://github.com/ddd-crew/ddd-starter-modelling-process
+                -->
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Domain-Driven Design Starter Modelling Process</h3>
+                    <img src="images/ddd-starter-modelling-process.png" width="70%" />
+                    <br />
+                    <small><strong>Source:</strong> <a
+                            href="https://github.com/ddd-crew/ddd-starter-modelling-process">https://github.com/ddd-crew/ddd-starter-modelling-process</a></small>
+                </section>
             </section>
             <!--
             https://docs.microsoft.com/en-us/azure/architecture/microservices/model/tactical-ddd
@@ -280,13 +387,29 @@
                 </section>
                 <section>
                     <h2>Tactical DDD</h2>
-                    <p>Patterns:</p>
+                    <p>Concepts:</p>
                     <ul>
                         <li>Value Objects</li>
                         <li>Entities</li>
                         <li>Agreggate Root</li>
                     </ul>
                 </section>
+                <!--
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Tools:</p>
+                    <ul>
+                        <li>ArchUnit</li>
+                        <li>Jmolecules</li>
+                        <li>Spring Data JDBC</li>
+                    </ul>
+                    <hr />
+                    <p>Layouts:</p>
+                    <ul>
+                        <li>Onion architecture</li>
+                    </ul>
+                </section>
+                -->
                 <!--
                 https://martinfowler.com/bliki/ValueObject.html
                 https://en.wikipedia.org/wiki/Value_object
@@ -437,7 +560,7 @@
                         <li>Spring Data JDBC</li>
                     </ul>
                     <hr />
-                    <li>Layouts:</li>
+                    <p>Layouts:</p>
                     <ul>
                         <li>Onion architecture</li>
                     </ul>
@@ -682,7 +805,8 @@
                     <ul>
                         <li><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215"
                                 target="_blank">
-                                Domain-Driven Design: Tackling Complexity in the Heart of Software</a>&nbsp;Eric Evans
+                                Domain-Driven Design: Tackling Complexity in the Heart of Software</a>&nbsp;Eric
+                            Evans
                         </li>
                         <li><a href="https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf"
                                 target="_blank">Domain-Driven Design Reference, Definitions and Pattern
