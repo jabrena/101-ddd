@@ -60,15 +60,6 @@
                 </section>
             </section>
 
-            <section>
-                <section>
-                    <img src="images/joke2.jpg" width="50%" />
-                </section>
-                <section>
-                    <img src="images/joke3.jpg" width="40%" />
-                </section>
-            </section>
-
             <!--
             https://martinfowler.com/tags/domain%20driven%20design.html
             -->
@@ -493,7 +484,7 @@
             <section>
                 <section>
                     <h2>Implementing with DDD</h2>
-                    <p>Layouts:</p>
+                    <p>Patterns:</p>
                     <ul>
                         <li>Onion architecture</li>
                     </ul>
@@ -501,8 +492,24 @@
                     <p>Libraries:</p>
                     <ul>
                         <li>ArchUnit</li>
-                        <li>Jmolecules</li>
+                        <!-- <li>Jmolecules</li> -->
                         <li>Spring Data JDBC</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>
+                        The Hexagonal-like Architectures:
+                    </p>
+                    <ul>
+                        <li>The first Hexagonal Architecture, originally called Ports and Adapters, was published in
+                            2005 by
+                            Alistair Cockburn;</li>
+                        <li>An alternative to it called Onion Architecture was published in 2008 by Jeffrey Palermo;
+                        </li>
+                        <li>An alternative to it called The Clean Architecture was published in 2012 by Robert C.
+                            Martin.</li>
                     </ul>
                 </section>
                 <section>
@@ -513,7 +520,6 @@
                         that enables maintainable and evolutionary
                         enterprise systems.
                     </p>
-                    <!-- <img src="images/onion-architecture.png" /> -->
                     <small><strong>Source:</strong>
                         <a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
                         </a>
@@ -569,6 +575,36 @@
                             on any
                             adapter package.
                         </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>jmolecules-onion-architecture: Layers:</p>
+                    <img src="images/jmolecules2.png" width="90%" />
+                    <small>
+                        <strong>Source:</strong>
+                        https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
+                    </small>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>Advantages:</p>
+                    <ul>
+                        <li>It provides better maintainability as all the codes depend on layers or the center.</li>
+                        <li>It provides better testability as the unit test can be created for separate layers.</li>
+                        <li>It develops a loosely coupled application as the outer layer of the application always
+                            communicates with the inner layer via interfaces.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Onion Architecture</h3>
+                    <p>Advantages:</p>
+                    <ul>
+                        <li>Domain entities are core and center part.</li>
+                        <li>The internal layers never depend on the external layer.</li>
                     </ul>
                 </section>
                 <section>
@@ -635,6 +671,28 @@ public class BalanceArchitectureOnionTest {
 }
                     </code></pre>
                 </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>ArchUnit</h3>
+                    <img src="images/demo.png" />
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>ArchUnit</h3>
+                    <p>You can apply TDD at architectural level with ArchUnit</p>
+                    <img src="images/red-green-refactor.png" />
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Spring Data JDBC</h3>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Spring Data JDBC</h3>
+                    <img src="images/demo.png" />
+                </section>
+            </section>
+            <section data-visibility="hidden">
                 <section>
                     <h2>Jmolecules</h2>
                     <p>
@@ -777,9 +835,7 @@ public class BalanceArchitectureOnionTest {
                     <img src="images/demo.png" />
                 </section>
                 -->
-                <section>
-                    <h2>Spring Data JDBC</h2>
-                </section>
+
                 <!--
                 https://speakerdeck.com/kiyotakeshi69/spring-fest-2020-express-ddd-using-jpa-x-jmolecules
                 -->
