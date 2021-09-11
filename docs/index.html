@@ -404,6 +404,7 @@
                         <li>Value Objects</li>
                         <li>Entities</li>
                         <li>Agreggate Root</li>
+                        <li>Repositories</li>
                     </ul>
                 </section>
                 <!--
@@ -456,8 +457,52 @@
                     <h2>Tactical DDD</h2>
                     <p>Agreggate Root</p>
                     <p>
-                        A collection of entities or value objects that
-                        are related to each other through a Aggregate Root object
+                        An Agreggate is a cluster of associated objects that we treat as a unit.
+                    </p>
+                    <small><strong>Source:</strong>
+                        Domain-Driven Design, Eric Evans
+                    </small>
+                </section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Agreggate Root</p>
+                    <p>
+                        Aggregates are the basic element of transfer of data storage - you request to load or save whole
+                        aggregates.
+                    </p>
+                    <small><strong>Source:</strong>
+                        <a href="https://martinfowler.com/bliki/DDD_Aggregate.html" target="_blank">
+                            https://martinfowler.com/bliki/DDD_Aggregate.html
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Agreggate Root</p>
+                    <p>
+                        An aggregate will have one of its component objects be the aggregate root. Any references from
+                        outside
+                        the aggregate should only go to the aggregate root. The root can thus ensure the integrity of
+                        the
+                        aggregate as a whole.
+                    </p>
+                    <small><strong>Source:</strong>
+                        <a href="https://martinfowler.com/bliki/DDD_Aggregate.html" target="_blank">
+                            https://martinfowler.com/bliki/DDD_Aggregate.html
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Repositories</p>
+                    <p>Query access to aggregates expressed in the ubiquitous language
+                    </p>
+                    <p>
+                        For each type of aggregate that needs global access, create a service that can provide the
+                        collection of all objects of that aggregate’s root type. Provide methods to add and remove
+                        objects, which
+                        will encapsulate the actual insertion or removal of data in the data store. Provide methods
+                        that select objects based on criteria meaningful to domain experts.
                     </p>
                 </section>
                 <section>
@@ -685,11 +730,49 @@ public class BalanceArchitectureOnionTest {
                 <section>
                     <h2>Implementing with DDD</h2>
                     <h3>Spring Data JDBC</h3>
+                    <p>
+                        Spring Data JDBC, part of the larger Spring Data family, makes it easy to implement JDBC based
+                        repositories.
+                    </p>
+                    <small><strong>Library:</strong>
+                        https://spring.io/projects/spring-data-jdbc</small>
+                </section>
+                <section>
+                    <img src="images/relational.jpg" />
+                </section>
+                <section>
+                    <img src="images/ddd-jpa.jpg" />
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Spring Data JDBC</h3>
+                    <p>
+                        Spring Data repositories are inspired by the repository as described in the book Domain Driven
+                        Design by Eric Evans. One consequence of this is that you should have a repository per Aggregate
+                        Root. Aggregate Root is another concept from the same book and describes an entity which
+                        controls the lifecycle of other entities which together are an Aggregate. An Aggregate is a
+                        subset of your model which is consistent between method calls to your Aggregate Root.
+                    </p>
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Spring Data JDBC</h3>
+                    <img src="images/lego-aggregate.003.png" width="40%" />
+                    <ul>
+                        <li>Aggregates are Boundaries of integrity</li>
+                        <li>Transactional consistency inside</li>
+                        <li>Eventual consistency between aggregates</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Implementing with DDD</h2>
                     <h3>Spring Data JDBC</h3>
                     <img src="images/demo.png" />
+                </section>
+                <section>
+                    <h2>Implementing with DDD</h2>
+                    <h3>Spring Data JDBC</h3>
+                    <img src="images/lego-aggregate.003.png" width="70%" />
                 </section>
             </section>
             <section data-visibility="hidden">
@@ -843,6 +926,7 @@ public class BalanceArchitectureOnionTest {
             <section>
                 <section>
                     <h2>References</h2>
+                    <h3>Books</h3>
                     <ul>
                         <li><a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215"
                                 target="_blank">
@@ -864,6 +948,7 @@ public class BalanceArchitectureOnionTest {
                                 EventStorming,
                                 An act of Deliberate Collective Learning</a>&nbsp;Alberto Brandolini
                         </li>
+                        <!--
                         <li>
                             <a href="https://gojko.net/books/specification-by-example/" target="_blank">Specification by
                                 Example</a>&nbsp;Gojko Adzic
@@ -872,6 +957,28 @@ public class BalanceArchitectureOnionTest {
                             <a href="https://gojko.net/books/impact-mapping/" target="_blank">Impact
                                 Mapping</a>&nbsp;Gojko Adzic
                         </li>
+                        -->
+                    </ul>
+                </section>
+                <section>
+                    <h2>References</h2>
+                    <h3>Articles</h3>
+                    <ul>
+                        <li>https://spring.io/blog/2018/09/17/introducing-spring-data-jdbc</li>
+                        <li>https://spring.io/blog/2018/09/24/spring-data-jdbc-references-and-aggregates</li>
+                        <li>https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf</li>
+                        <li>https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf</li>
+                        <li>https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf</li>
+                        <li>http://scabl.blogspot.com/p/advancing-enterprise-ddd.html</li>
+                        <li>http://blogs.tedneward.com/post/the-vietnam-of-computer-science/</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>References</h2>
+                    <h3>Talks</h3>
+                    <ul>
+                        <li>https://blog.schauderhaft.de/talk-spring-data-jdbc/talk.html</li>
+                        <li>https://blog.schauderhaft.de/talk-ddd-jdbc/talk.html</li>
                     </ul>
                 </section>
             </section>
