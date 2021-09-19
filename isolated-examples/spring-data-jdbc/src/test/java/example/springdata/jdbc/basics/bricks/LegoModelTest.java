@@ -1,9 +1,9 @@
 package example.springdata.jdbc.basics.bricks;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static java.util.Arrays.*;
 
@@ -28,6 +28,7 @@ public class LegoModelTest {
 		models.save(womenOfNasa);
 	}
 
+	@Disabled
 	@Test
 	public void modelReferencingBricks() {
 
@@ -45,6 +46,7 @@ public class LegoModelTest {
 		models.save(womenOfNasa);
 	}
 
+	@Disabled
 	@Test
 	public void modelManualAndBricks() {
 
