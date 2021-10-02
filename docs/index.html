@@ -26,7 +26,7 @@
                     <p>
                         Mitigating the "Ball of mud" in your products/services with Domain Driven Design.
                     </p>
-                    <img src="images/ball-of-mud.png" width="30%" />
+                    <img src="images/ball-of-mud.png" width="35%" />
                     <p>
                         <a href="https://twitter.com/juanantoniobm" target="_blank">@juanantoniobm</a>
                         & <a href="https://twitter.com/LeXavTwit" target="_blank">@LeXavTwit</a>
@@ -41,16 +41,21 @@
 
             <section>
                 <section>
-                    <img src="images/socrates.jpg" width="40%" />
+                    <img src="images/socrates.jpg" width="70%" />
                     <blockquote>I can't teach anything. I can only make you think.</blockquote>
                     - Socrates
                 </section>
                 <section>
-                    <img src="images/conway.png" width="30%" />
+                    <img src="images/forest.jpg" width="70%" />
+                    <blockquote>Can't see the forest for the trees</blockquote>
+                    - John Heywood
+                </section>
+                <section>
+                    <!-- <img src="images/conway.png" width="30%" /> -->
                     <blockquote> Any organization that designs a system (defined broadly) will produce a design whose
                         structure is a copy of the organization's communication structure.
                     </blockquote>
-                    — Melvin E. Conway
+                    — Melvin E. Conway
                 </section>
                 <section>
                     <img src="images/joke2.jpg" width="40%" />
@@ -69,13 +74,13 @@
                     <li>Who I am</li>
                     <!-- <li>Context</li> -->
                     <li>Goals</li>
+                    <li>Context</li>
+                    <li>DDD: "what when why where how"</li>
                     <!-- <li>Timeline</li> -->
-                    <li>What is DDD?</li>
                     <li>Strategical DDD</li>
+                    <li>Implementing Strategical DDD</li>
                     <li>Tactical DDD</li>
-                    <!-- <li>DDD Process</li> -->
-                    <!-- <li>Techniques</li> -->
-                    <li>Implementing with DDD</li>
+                    <li>Implementing Tactical DDD</li>
                     <li>References</li>
                 </ol>
             </section>
@@ -87,14 +92,35 @@
                     <li>Learn to use DDD in different project stages</li>
                 </ul>
             </section>
-            <section data-visibility="hidden">
+            <section>
                 <section>
                     <h2>Context</h2>
-                    <img src="images/software-life-cycle.png" width="50%" />
+                    <p>Microservices with Spring Cloud Kubernetes</p>
+                    <img src="images/context-spring-boot-micro-services-landscape.png" width="60%" />
 
                     <br />
+                    <small><strong>Source:</strong>
+                        https://tanzu.vmware.com/developer/guides/kubernetes/app-enhancements-spring-k8s/</small>
                 </section>
                 <section>
+                    <h2>Context</h2>
+                    <p>Microservices architecture on Azure AKS</p>
+                    <img src="images/context-aks.png" width="65%" />
+
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/containers/aks-microservices/aks-microservices</small>
+                </section>
+                <section>
+                    <h2>Context</h2>
+                    <p>Microservices Architecture using Amazon EKS</p>
+                    <img src="images/context-eks.png" width="70%" />
+
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/modernize-applications-with-microservices-using-amazon-eks-ra.pdf</small>
+                </section>
+                <section data-visibility="hidden">
                     <h2>Context</h2>
                     <p>What activities require more time in your projects?</p>
                     <!--
@@ -107,31 +133,10 @@
                     <img src="images/poll.jpg" width="25%" />
                 </section>
 
-                <!--
-                https://docs.aws.amazon.com/whitepapers/latest/microservices-on-aws/microservices-on-aws.html
-                https://towardsdatascience.com/modern-unified-data-architecture-38182304afcc
-                -->
-                <section>
-                    <h2>Context</h2>
-                    <p>Data Unified Architecture:</p>
-                    <img src="images/data-unified-architecture.png" width="60%" />
-                    <p>Where is you located?</p>
-                </section>
                 <section>
                     <h2>Context</h2>
                     <p>
-                        Example: APIs / Microservices / Lambdas
-                    </p>
-                    <img src="images/microservice-design.png" width="60%" />
-
-                    <br />
-                    <small><strong>Source:</strong>
-                        https://d1.awsstatic.com/whitepapers/microservices-on-aws.pdf</small>
-                </section>
-                <section>
-                    <h2>Context</h2>
-                    <p>
-                        Example: APIs / Microservices / Lambdas
+                        Serverless scenarios
                     </p>
                     <img src="images/serverless-design.png" width="100%" />
 
@@ -140,6 +145,16 @@
                         https://aws.amazon.com/es/architecture/icons/</small>
                 </section>
                 <section>
+                    <h2>Context</h2>
+                    <p>Massive Microservices scenarios:
+                    Monzo: 1600 Microservices</p>
+                    <img src="images/monzo-microservices.jpg" width="40%" />
+
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://aws.amazon.com/es/solutions/case-studies/monzo/</small>
+                </section>
+                <section data-visibility="hidden">
                     <h2>Context</h2>
                     <p>Have that designs an enough detail to create a backlog to start the implementation phase?</p>
                 </section>
@@ -157,7 +172,7 @@
                 https://martinfowler.com/bliki/BoundedContext.html
                 https://blog.pragmatists.com/domain-driven-design-vs-anemic-model-how-do-they-differ-ffdee9371a86
                 -->
-                <section>
+                <section data-visibility="hidden">
                     <h2>Context</h2>
                     <p>
                         Or maybe your design suffer with: <strong>Anemic Domain Model</strong>
@@ -193,7 +208,8 @@
             </section>
             <section>
                 <section>
-                    <h2>What is DDD?</h2>
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>What is DDD?</h3>
                     <p>
                         Domain-driven design (DDD) is the concept that the structure and language of software
                         code
@@ -204,9 +220,53 @@
                     </p>
                 </section>
                 <section>
-                    <h2>What is DDD?</h2>
-                    <h3>DDD Ecosystem</h3>
-                    <img src="images/ddd-parts.png" width="100%" />
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>When use DDD?</h3>
+                    <ul>
+                        <li>Greenfield projects</li>
+                        <li>Brownfield projects</li>
+                    </ul>
+                    <p>
+                        In any moment :)
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>Why use DDD?</h3>
+                    <ul>
+                        <li>Improve the design of your project</li>
+                        <li>Reduce the complexity to maintain software in Production stage</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>Where use DDD?</h3>
+                    <p>
+                        You could apply DDD at:
+                    </p>
+                    <ul>
+                        <li>Microservice Level</li>
+                        <li>Squad Level</li>
+                        <li>Guild Level</li>
+                        <li>Product Level</li>
+                    </ul>
+                    <p>Depends of the DDD Skills 🤷‍</p>
+                </section>
+                <section>
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>How use DDD?</h3>
+                    <p>
+                        You could use DDD:
+                    </p>
+                    <ul>
+                        <li>Strategically</li>
+                        <li>Tactically</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>DDD: "what when why where how"</h2>
+                    <p>DDD Vocabulary</p>
+                    <img src="images/ddd-parts.png" width="80%" />
                 </section>
             </section>
             <section>
@@ -225,11 +285,14 @@
                         <li>The Bounded contexts</li>
                         <li>The Context maps</li>
                     </ul>
-                    <hr />
-                    <p>Tools:</p>
-                    <ul>
-                        <li>Event-Storming</li>
-                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <p>Stage:</p>
+                    <img src="images/sdlc.jpg" width="45%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://commons.wikimedia.org</small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -293,29 +356,40 @@
                     <small><strong>Source:</strong>
                         https://github.com/ddd-crew/context-mapping</small>
                 </section>
-
+            </section>
+            <section>
                 <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>Domain Events</h3>
-                    <p>
-                        A domain event is a full-fledged part of the domain model, a representation of something
-                        that happened in the domain. Ignore irrelevant domain activity while making explicit the
-                        events that the domain experts want to track or be notified of, or which are associated
-                        with state change in the other model objects.
-                    </p>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p><strong>Techniques:</strong></p>
+                    <ul>
+                        <li>Event Storming</li>
+                        <li>Example Mapping</li>
+                    </ul>
+                    <hr />
+                    <p><strong>Tool:</strong></p>
+                    <ul>
+                        <li>Context Mapper</li>
+                    </ul>
+                    <hr />
+                    <p><strong>Process:</strong></p>
+                    <ul>
+                        <li>Domain-Driven Design Starter Modelling Process</li>
+                    </ul>
                 </section>
-
                 <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>Does exist any tool?</h3>
-                    <h1>🤔</h1>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Stage:</p>
+                    <img src="images/sdlc.jpg" width="45%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://commons.wikimedia.org</small>
                 </section>
                 <!--
                 https://www.eventstorming.com/
                 https://en.wikipedia.org/wiki/Event_storming
                 -->
                 <section>
-                    <h2>Strategic DDD</h2>
+                    <h2>Implementing Strategical DDD</h2>
                     <p>Event-Storming</p>
                     <img src="images/event-storming.png" />
                 </section>
@@ -323,15 +397,20 @@
                 https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd
                 -->
                 <section>
-                    <h2>Strategic DDD</h2>
+                    <h2>Implementing Strategical DDD</h2>
                     <p>Event-Storming</p>
                     <p>
                         Event storming is a workshop-based method to quickly find out what is happening in the
                         domain.
                         The result is expressed in sticky notes on a wide wall.
                         The business process is "stormed out" as a series of domain events which are denoted as
-                        orange
-                        stickies.
+                        orange stickies.
+                    </p>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Event-Storming</p>
+                    <p>
                         Event storming can be used as a means for business process modeling and requirements
                         engineering.
                         The basic idea is to bring together software developers and domain experts and learn
@@ -340,7 +419,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>Strategic DDD</h2>
+                    <h2>Implementing Strategical DDD</h2>
                     <p>Example: Discovering Domain Events</p>
                     <img src="images/event-storming-example1.png" width="60%" />
                     <br />
@@ -348,7 +427,7 @@
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Strategic DDD</h2>
+                    <h2>Implementing Strategical DDD</h2>
                     <p>Example: Discovering Commands & Queries</p>
                     <img src="images/event-storming-example2.png" width="60%" />
                     <br />
@@ -356,7 +435,7 @@
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Strategic DDD</h2>
+                    <h2>Implementing Strategical DDD</h2>
                     <p>Example: Discovering Invariants</p>
                     <img src="images/event-storming-example3.png" width="60%" />
                     <br />
@@ -364,24 +443,88 @@
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Strategic DDD</h2>
+                    <h2>Implementing Strategical DDD</h2>
                     <p>Example: Discovering the bounded contexts</p>
-                    <img src="images/event-storming-example5.png" width="60%" />
+                    <img src="images/event-storming-example5.png" width="50%" />
                     <br />
                     <small><strong>Source:</strong>
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>Does exist any process?</h3>
-                    <h1>🤔</h1>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Example Mapping</p>
+                    <img src="images/example-mapping.png" width="55%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://cucumber.io/blog/bdd/example-mapping-introduction/</small>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Example Mapping</p>
+                    <p>
+                        Example Mapping uses a pack of 4-coloured index cards and some pens to capture these different
+                        types of information as the conversation unfolds.
+                    </p>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Example Mapping</p>
+                    <ul>
+                        <li>We start by writing the story under discussion on <strong>a yellow card</strong> and placing it at the top of the table.</li>
+                        <li>Next we write each of the acceptance criteria, or rules that we already know,
+                            on <strong>a blue card</strong> and placing those across the table beneath the yellow story card.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Example Mapping</p>
+                    <ul>
+                        <li>For each rule, we may need one or more examples to illustrate it.
+                            We write those on a green card and place them under the relevant rule.</li>
+                        <li>As we discuss these examples, we may uncover questions that nobody in the room can answer.
+                            We capture those on a red card and move on with the conversation.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Example Mapping</p>
+                    <img src="images/example-mapping-e1.png" width="65%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://www.slideshare.net/JoseNieto1/example-mapping-presentation-125817269</small>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Context mapper</p>
+                    <p>Context Mapper is a modular and extensible modeling framework for Domain-driven Design (DDD) and its strategic patterns.
+                        The core component provides a DSL to create context maps featuring these DDD patterns.</p>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/</small>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Context mapper</p>
+                    <img src="images/contextmap-e1.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://github.com/ContextMapper/context-mapper-examples/tree/master/src/main/cml/insurance-example</small>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Context mapper</p>
+                    <img src="images/contextmap-e1.png" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://github.com/ContextMapper/context-mapper-examples/tree/master/src/main/cml/insurance-example</small>
                 </section>
                 <!--
                 https://github.com/ddd-crew/ddd-starter-modelling-process
                 -->
                 <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>Domain-Driven Design Starter Modelling Process</h3>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Domain-Driven Design Starter Modelling Process</p>
                     <img src="images/ddd-starter-modelling-process.png" width="70%" />
                     <br />
                     <small><strong>Source:</strong> <a
@@ -405,7 +548,16 @@
                         <li>Entities</li>
                         <li>Agreggate Root</li>
                         <li>Repositories</li>
+                        <li>Domain Events</li>
                     </ul>
+                </section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <p>Stage:</p>
+                    <img src="images/sdlc.jpg" width="45%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://commons.wikimedia.org</small>
                 </section>
                 <!--
                 <section>
@@ -525,10 +677,20 @@
                             https://kalele.io/modeling-aggregates-with-ddd-and-entity-framework/</a></small>
 
                 </section>
+                <section>
+                    <h2>Tactical DDD</h2>
+                    <h3>Domain Events</h3>
+                    <p>
+                        A domain event is a full-fledged part of the domain model, a representation of something
+                        that happened in the domain. Ignore irrelevant domain activity while making explicit the
+                        events that the domain experts want to track or be notified of, or which are associated
+                        with state change in the other model objects.
+                    </p>
+                </section>
             </section>
             <section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <p>Patterns:</p>
                     <ul>
                         <li>Onion architecture</li>
@@ -542,7 +704,15 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
+                    <p>Stage:</p>
+                    <img src="images/sdlc.jpg" width="45%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://commons.wikimedia.org</small>
+                </section>
+                <section>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>
                         The Hexagonal-like Architectures:
@@ -558,7 +728,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>
                         The Onion Architecture is an Architectural Pattern
@@ -571,12 +741,12 @@
                     </small>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <img src="images/onion-architecture3.png" width="50%" />
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>Domain layer:</p>
                     <ul>
@@ -590,7 +760,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>Application layer:</p>
                     <ul>
@@ -604,7 +774,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>Infrastructure layer:</p>
                     <ul>
@@ -623,7 +793,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>jmolecules-onion-architecture: Layers:</p>
                     <img src="images/jmolecules2.png" width="90%" />
@@ -633,7 +803,7 @@
                     </small>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>Advantages:</p>
                     <ul>
@@ -644,7 +814,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>Advantages:</p>
                     <ul>
@@ -653,14 +823,14 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Onion Architecture</h3>
                     <p>How to ensure that your team apply Onion architecture
                         in an effective way?</p>
                     <h1>🤔</h1>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>ArchUnit</h3>
                     <p>ArchUnit is a free, simple and extensible library for checking the architecture of your
                         Java code
@@ -669,7 +839,7 @@
                     <small><strong>Website:</strong> https://www.archunit.org/</small>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>ArchUnit</h3>
                     <!-- <p>Maven dependencies:</p> -->
                     <pre class="stretch"><code data-trim data-noescape>
@@ -696,7 +866,7 @@
                         https://mvnrepository.com/artifact/com.tngtech.archunit</small>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>ArchUnit</h3>
                     <p>Example:</p>
                     <pre><code data-trim data-noescape>
@@ -717,18 +887,18 @@ public class BalanceArchitectureOnionTest {
                     </code></pre>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>ArchUnit</h3>
                     <img src="images/demo.png" />
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>ArchUnit</h3>
                     <p>You can apply TDD at architectural level with ArchUnit</p>
                     <img src="images/red-green-refactor.png" />
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Spring Data JDBC</h3>
                     <p>
                         Spring Data JDBC, part of the larger Spring Data family, makes it easy to implement JDBC based
@@ -744,7 +914,7 @@ public class BalanceArchitectureOnionTest {
                     <img src="images/ddd-jpa.jpg" />
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Spring Data JDBC</h3>
                     <p>
                         Spring Data repositories are inspired by the repository as described in the book Domain Driven
@@ -755,7 +925,7 @@ public class BalanceArchitectureOnionTest {
                     </p>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Spring Data JDBC</h3>
                     <img src="images/lego-aggregate.003.png" width="40%" />
                     <ul>
@@ -765,14 +935,14 @@ public class BalanceArchitectureOnionTest {
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Spring Data JDBC</h3>
                     <img src="images/demo.png" />
                 </section>
                 <section>
-                    <h2>Implementing with DDD</h2>
+                    <h2>Implementing Tactical DDD</h2>
                     <h3>Spring Data JDBC</h3>
-                    <img src="images/lego-aggregate.003.png" width="70%" />
+                    <img src="images/lego-aggregate.003.png" width="60%" />
                 </section>
             </section>
             <section data-visibility="hidden">
@@ -964,21 +1134,28 @@ public class BalanceArchitectureOnionTest {
                     <h2>References</h2>
                     <h3>Articles</h3>
                     <ul>
-                        <li>https://spring.io/blog/2018/09/17/introducing-spring-data-jdbc</li>
-                        <li>https://spring.io/blog/2018/09/24/spring-data-jdbc-references-and-aggregates</li>
-                        <li>https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf</li>
-                        <li>https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf</li>
-                        <li>https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf</li>
-                        <li>http://scabl.blogspot.com/p/advancing-enterprise-ddd.html</li>
-                        <li>http://blogs.tedneward.com/post/the-vietnam-of-computer-science/</li>
+                        <li><a href="https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf" target="_blank">Effective Aggregate Design Part I: Modeling a Single Aggregate</a></li>
+                        <li><a href="https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf">Effective Aggregate Design Part II: Making aggregates work together</a></li>
+                        <li><a href="https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf">Effective Aggregate Design Part III: Gaining Insight through Discovery</a></li>
+                        <li><a href="http://scabl.blogspot.com/p/advancing-enterprise-ddd.html" target="_blank">Advancing Enterprise DDD</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>References</h2>
+                    <h3>Articles</h3>
+                    <ul>
+                        <li><a href="https://spring.io/blog/2018/09/17/introducing-spring-data-jdbc" target="_blank">Introducing Spring Data JDBC</a></li>
+                        <li><a href="https://spring.io/blog/2018/09/24/spring-data-jdbc-references-and-aggregates" target="_blank">Spring Data JDBC, References, and Aggregates</a></li>
+                        <li><a href="https://spring.io/blog/2021/09/09/spring-data-jdbc-how-to-use-custom-id-generation" target="_blank">Spring Data JDBC - How to use custom ID generation</a></li>
                     </ul>
                 </section>
                 <section>
                     <h2>References</h2>
                     <h3>Talks</h3>
                     <ul>
-                        <li>https://blog.schauderhaft.de/talk-spring-data-jdbc/talk.html</li>
-                        <li>https://blog.schauderhaft.de/talk-ddd-jdbc/talk.html</li>
+                        <li><a href="https://blog.schauderhaft.de/talk-spring-data-jdbc/talk.html">Spring Data JDBC</a> Jens Schauder</li>
+                        <li><a href="https://blog.schauderhaft.de/talk-ddd-jdbc/talk.html">Domain Driven Design with relational Databases</a> Jens Schauder</li>
+                        <li><a href="https://speakerdeck.com/olivergierke/architecturally-evident-java-applications-with-jmolecules">Architecturally-evident Java Applications with jMolecules</a> Oliver Drotbohm</li>
                     </ul>
                 </section>
             </section>

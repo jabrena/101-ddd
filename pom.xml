@@ -12,7 +12,7 @@
 	<description>101-ddd</description>
 
 	<properties>
-		<java.version>16</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<modules>
