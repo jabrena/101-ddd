@@ -1,0 +1,5 @@
+spring:
+  mongo:
+    host:
+    port:
+    databaseName: balance
