@@ -60,9 +60,11 @@
                 <section>
                     <img src="images/joke2.jpg" width="40%" />
                 </section>
+                <!--
                 <section>
                     <img src="images/joke3.jpg" width="40%" />
                 </section>
+                -->
             </section>
 
             <!--
@@ -72,7 +74,6 @@
                 <h2>Agenda</h2>
                 <ol>
                     <li>Who I am</li>
-                    <!-- <li>Context</li> -->
                     <li>Goals</li>
                     <li>Context</li>
                     <li>DDD: "what when why where how"</li>
@@ -81,18 +82,51 @@
                     <li>Implementing Strategical DDD</li>
                     <li>Tactical DDD</li>
                     <li>Implementing Tactical DDD</li>
+                    <li>Who to follow</li>
                     <li>References</li>
                 </ol>
             </section>
             <section>
                 <h2>Goals</h2>
                 <ul>
-                    <li>Design software that teams like maintaining</li>
+                    <li>Explain fundamentals about DDD</li>
+                    <li>Show few techniques from the ecosystem to improve your DDD</li>
+                    <li>Show JVM libraries related to DDD</li>
+                    <li>Encourage to design & implement software that it is easy to operate, maintain & evolve</li>
                     <li>Mitigate "the ball of mud" effect</li>
-                    <li>Learn to use DDD in different project stages</li>
                 </ul>
             </section>
             <section>
+                <section>
+                    <h2>Context</h2>
+                    <p>What is a Software architecture?</p>
+                    <p>
+                        <strong>Architecture is about the important stuff. Whatever that is.</strong>
+                    </p>
+                    <img src="images/cruft.png" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://martinfowler.com/architecture/
+                    </small>
+                </section>
+                <section>
+                    <h2>Context</h2>
+                    <p>
+                        <strong><u>Tackling Complexity</u></strong> in the Heart of Software
+                    </p>
+                    <img src="images/ddd-book-eric-evans.jpg" width="35%" />
+                </section>
+                <section>
+                    <h2>Context</h2>
+                    <p>
+                        Timeline
+                    </p>
+                    <img src="images/timeline.jpg" width="60%" />
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://eventmodeling.org/about/
+                    </small>
+                </section>
                 <section>
                     <h2>Context</h2>
                     <p>Microservices with Spring Cloud Kubernetes</p>
@@ -102,6 +136,7 @@
                     <small><strong>Source:</strong>
                         https://tanzu.vmware.com/developer/guides/kubernetes/app-enhancements-spring-k8s/</small>
                 </section>
+                <!--
                 <section>
                     <h2>Context</h2>
                     <p>Microservices architecture on Azure AKS</p>
@@ -120,19 +155,23 @@
                     <small><strong>Source:</strong>
                         https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/modernize-applications-with-microservices-using-amazon-eks-ra.pdf</small>
                 </section>
+                -->
+                <!--
                 <section data-visibility="hidden">
                     <h2>Context</h2>
                     <p>What activities require more time in your projects?</p>
-                    <!--
+
                     <ul>
                         <li>Design is something Oral</li>
                         <li>The fall of IT Architects with the Agile Age</li>
                         <li>UML didn´t survive</li>
                     </ul>
-                    -->
+
                     <img src="images/poll.jpg" width="25%" />
                 </section>
+                -->
 
+                <!--
                 <section>
                     <h2>Context</h2>
                     <p>
@@ -154,6 +193,7 @@
                     <small><strong>Source:</strong>
                         https://aws.amazon.com/es/solutions/case-studies/monzo/</small>
                 </section>
+                -->
                 <section data-visibility="hidden">
                     <h2>Context</h2>
                     <p>Have that designs an enough detail to create a backlog to start the implementation phase?</p>
@@ -347,6 +387,212 @@
                     <br />
                     <small><strong>Source:</strong>
                         https://github.com/ddd-crew/context-mapping</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
+                    <p>
+                        This pattern addresses the case where the power is skewed toward the consumers. The supplier is interested in protecting its consumers and providing the best service possible.
+                    </p>
+                    <p>
+                        To protect the consumers from changes in its implementation, the upstream supplier decouples its implementation model from the public interface.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
+                    <p>
+                        The supplier’s public interface is not intended to conform to its ubiquitous language. Instead, it is intended to expose a protocol convenient for the consumers
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
+                    <p>
+                        expressed in an integration-oriented language. Hence, the public protocol is called the “published language.”
+                    </p>
+                    <p>
+                        In a sense, the open-host service pattern is a reversal of the anticorruption layer pattern: instead of the consumer, the supplier implements the translation of its internal model.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+<pre><code data-trim data-noescape>
+PrintingContext [U,OHS]->[D,ACL] PolicyManagementContext {
+  implementationTechnology = "SOAP"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/open-host-service/</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Conformist</h3>
+                    <p>
+                        This relationship describes the relationship of 2 bounded context,
+                        where the upstream has no interest in supporting the downstream for whatever reason.
+                        Instead, the downstream must conform to whatever the upstream provides.
+                        This can happen when integrating a new feature with a large,
+                        existing solution that is well established; or using a set of APIs,
+                        where the downstream is not the sole customer.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Conformist</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+                    <pre><code data-trim data-noescape>
+PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
+  implementationTechnology = "RESTful HTTP"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/conformist/</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Anticorruption Layer</h3>
+                    <p>
+                        This is another upstream/downstream relationship at a lower level,
+                        where the downstream bounded context implements a layer between itself and the upstream.
+                        This layer is responsible for translating the objects given by the upstream into its own models.
+                        This approach will guarantee the integrity of the downstream bounded
+                        context and keeps it completely ignorant of any foreign concepts.
+                        This approach is generally useful for integrating new features
+                        to some existing legacy software, where you can treat the existing legacy software as
+                        a black box bounded context and create an ACL for the new feature.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Anticorruption Layer</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+<pre><code data-trim data-noescape>
+DebtCollection [D,ACL]<-[U,OHS,PL] PrintingContext {
+  implementationTechnology = "SOAP"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/anticorruption-layer/</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Shared Kernel</h3>
+                    <p>
+                        2 or more bounded contexts can share a common model.
+                        In design terms, the Ubiquitous Language of this shared part is common
+                        both all relevent teams. In code terms, you may have a shared library,
+                        or a service. This is generally a small codebase but difficult
+                        to maintain as its related bounded contexts develop,
+                        as the teams will tend to go on separate ways as their own
+                        bounded contexts evolve.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Shared Kernel</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+<pre><code data-trim data-noescape>
+CargoBookingContext [SK]<->[SK] VoyagePlanningContext {
+  implementationTechnology = "Java Library"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/shared-kernel/</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Customer/Supplier</h3>
+                    <p>
+                        This approach puts 2 bounded contexts into an upstream and downstream,
+                        where the upstream is the supplier, and has to try and meet
+                        the expectations of the customer (downstream).
+                        But the final decision of what the customer gets comes from the supplier.
+                        This typically works in an autonomous environment within
+                        the same organisation, or if the customer is the sole client of the supplier.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Customer/Supplier</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+                    <pre><code data-trim data-noescape>
+CustomerSelfServiceContext [D,C]<-[U,S] CustomerManagementContext
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/customer-supplier/</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Partnership</h3>
+                    <p>
+                        It describes more about the relationship between teams as oppose to actual code.
+                        This typically happens when 2 teams working on 2 bounded contexts have aligned and dependent set of goals.
+                        Each team should at least understand some of their partner’s Ubiquitous Language,
+                        namely the things that are interesting to their own context.
+                        This can work fairly well when both bounded contexts are at early stages of the project,
+                        where communication is quick and more efficient than implementing some of the other techniques.
+                        When both sides become more established, teams may incur too much commitment
+                        in understanding each other’s Ubiquitous Language.
+                        Of course, if a team was to work on both such bounded contexts,
+                        the ‘Partnership’ relationship would be much less costly.                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Partnership</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+                    <pre><code data-trim data-noescape>
+ContractsContext [P]<->[P] ClaimsContext {
+  implementationTechnology = "Messaging"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/partnership/</small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Published Language</h3>
+                    <p>
+                        Common language for the translation between the models that are going to interact.
+                        For example JSON or XML. Usually associated with OHS.
+                        The advantage of using REST services is that in each request the PL
+                        can be specified by configuring the desired content type.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Published Language</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+                    <pre><code data-trim data-noescape>
+PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
+  implementationTechnology = "RESTful HTTP"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        https://contextmapper.org/docs/published-language/</small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
