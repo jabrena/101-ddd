@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.assertj.core.groups.Tuple;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,6 +74,7 @@ class AggregateTests {
 		checkLegoSets(legoSets, "One last attempt: Just build a car! Ok?", 3);
 	}
 
+	@Disabled
 	@Test
 	void customQueries() {
 
