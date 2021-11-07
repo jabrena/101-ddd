@@ -99,14 +99,14 @@ public class Balance implements EventSourcedAggregateRoot<Balance, BalanceId>,
 
    public Balance apply(DomainEvent<Balance> event) {
       return switch (event) {
-         case BalanceCreated specific -> apply((BalanceCreated)specific);
-         case MoneyBalanceLimitAlreadyDefined specific -> this;
-         case MoneyBalanceLimitDefined specific -> apply((MoneyBalanceLimitDefined)specific);
-         case MoneyRepaid specific -> apply((MoneyRepaid)specific);
-         case MoneyWithdrawalFailedDueToInsufficientBalance specific -> this;
-         case MoneyWithdrawalFailedDueToLimitNotDefined specific -> this;
-         case MoneyWithdrawalFailedDueToRecentWithdrawal specific -> this;
-         case MoneyWithdrawn specific -> apply((MoneyWithdrawn)specific);
+         case BalanceCreated specific -> apply(specific);
+         case MoneyBalanceLimitAlreadyDefined ignored -> this;
+         case MoneyBalanceLimitDefined specific -> apply(specific);
+         case MoneyRepaid specific -> apply(specific);
+         case MoneyWithdrawalFailedDueToInsufficientBalance ignored -> this;
+         case MoneyWithdrawalFailedDueToLimitNotDefined ignored -> this;
+         case MoneyWithdrawalFailedDueToRecentWithdrawal ignored -> this;
+         case MoneyWithdrawn specific -> apply(specific);
          default -> throw new IllegalArgumentException(
              String.format("This event %s is not supported", event));
       };
@@ -127,7 +127,7 @@ public class Balance implements EventSourcedAggregateRoot<Balance, BalanceId>,
    }
 
    public Balance apply(MoneyBalanceLimitDefined event) {
-      return new Balance(balanceId, customerId, balance, lastWithdrawalTime, event.balanceLimit(),
+      return new Balance(balanceId, customerId, balance, null, event.balanceLimit(),
           event.version());
    }
 

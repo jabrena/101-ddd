@@ -132,7 +132,7 @@ public class BalanceController {
 
    @PostMapping(value = "/balance/{balanceId}/repayMoney", consumes = MediaType.APPLICATION_JSON_VALUE,
        produces = MediaType.APPLICATION_JSON_VALUE)
-   public ResponseEntity<BalanceOperationResponse> withdrawMoney(
+   public ResponseEntity<BalanceOperationResponse> repayMoney(
        @PathVariable("balanceId") String strBalanceId,
        @Valid @RequestBody RepayMoneyRequest request,
        BindingResult bindingResult) {

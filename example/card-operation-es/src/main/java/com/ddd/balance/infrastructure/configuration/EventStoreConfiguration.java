@@ -1,29 +1,42 @@
 package com.ddd.balance.infrastructure.configuration;
 
 import com.ddd.architecture.eventsourcing.eventstore.EventStore;
+import com.ddd.architecture.eventsourcing.model.DomainEvent;
 import com.ddd.balance.domain.model.entity.Balance;
 import com.ddd.balance.domain.model.entity.BalanceId;
 import com.ddd.balance.infrastructure.persistence.OccurrentEventStore;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClients;
+import org.occurrent.application.converter.CloudEventConverter;
+import org.occurrent.application.converter.jackson.JacksonCloudEventConverter;
 import org.occurrent.eventstore.mongodb.spring.blocking.EventStoreConfig;
 import org.occurrent.eventstore.mongodb.spring.blocking.SpringMongoEventStore;
 import org.occurrent.mongodb.timerepresentation.TimeRepresentation;
+import org.occurrent.subscription.api.blocking.PositionAwareSubscriptionModel;
+import org.occurrent.subscription.api.blocking.SubscriptionModel;
+import org.occurrent.subscription.api.blocking.SubscriptionPositionStorage;
+import org.occurrent.subscription.blocking.durable.DurableSubscriptionModel;
+import org.occurrent.subscription.mongodb.spring.blocking.SpringMongoSubscriptionModel;
+import org.occurrent.subscription.mongodb.spring.blocking.SpringMongoSubscriptionPositionStorage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.convert.DbRefResolver;
 import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
 import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
+import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -90,7 +103,7 @@ public class EventStoreConfiguration extends AbstractMongoClientConfiguration {
         return databaseName;
     }
 
-    /*@Bean
+    @Bean
     public SubscriptionModel subscription() {
         MongoTemplate mongoTemplate = mongoTemplate(mongoDbFactory(), mappingMongoConverter());
 
@@ -119,7 +132,7 @@ public class EventStoreConfiguration extends AbstractMongoClientConfiguration {
     public PositionAwareSubscriptionModel autoPersistingSubscriptionModel(
             PositionAwareSubscriptionModel subscription, SubscriptionPositionStorage storage) {
         return new DurableSubscriptionModel(subscription, storage);
-    }*/
+    }
 
     @Primary
     @Bean
@@ -127,6 +140,8 @@ public class EventStoreConfiguration extends AbstractMongoClientConfiguration {
         ObjectMapper objectMapper = new ObjectMapper();
         SimpleDateFormat rfc3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
         objectMapper.setDateFormat(rfc3339);
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return objectMapper;
     }
@@ -134,5 +149,12 @@ public class EventStoreConfiguration extends AbstractMongoClientConfiguration {
     @Bean
     public EventStore<Balance, BalanceId> balanceEventStore() {
         return new OccurrentEventStore(springMongoEventStore(), transactionManager(), eventObjectMapper());
+    }
+
+    @Bean
+    public CloudEventConverter<DomainEvent<Balance>> balanceCloudEventConverter() {
+        URI cloudEventSource = URI.create("urn:be.xl:shopping:foo");
+
+        return new JacksonCloudEventConverter.Builder<DomainEvent<Balance>>(eventObjectMapper(), cloudEventSource).build();
     }
 }
