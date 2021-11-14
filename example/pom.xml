@@ -11,5 +11,6 @@
 	<modules>
 		<module>card-operations</module>
 		<module>card-operation-es</module>
+		<module>card-operations-reactive</module>
 	</modules>
 </project>
