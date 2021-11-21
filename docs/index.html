@@ -122,7 +122,7 @@
                 </section>
                 <section>
                     <h2>Who I am</h2>
-                    <h3>Xavier L</h3>
+                    <h3>Xavier Levaux</h3>
                     <p>
                         PENDING
                     </p>
@@ -153,6 +153,18 @@
                         <a href="https://contextmapper.org/media/978-3-030-67445-8_11_AuthorsCopy.pdf" target="_blank">
                             https://contextmapper.org/media/978-3-030-67445-8_11_AuthorsCopy.pdf</a>
                     </small>
+                </section>
+                <section>
+                    <h2>No Goals</h2>
+                    <p>
+                        The talk doesn´t cover the following topics ATM:
+                    </p>
+                    <ul>
+                        <li>Team topologies</li>
+                        <li>Event Modelling</li>
+                        <li>Wardley maps</li>
+                        <li>Cognitive Load</li>
+                    </ul>
                 </section>
             </section>
 
@@ -504,13 +516,13 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns:</h3>
                     <ul>
-                        <li>Open Host Service</li>
-                        <li>Published Language</li>
-                        <li>Anticorruption Layer</li>
-                        <li>Shared Kernel</li>
-                        <li>Conformist</li>
-                        <li>Customer / Supplier</li>
-                        <li>Partnership</li>
+                        <li>Open Host Service [OHS]</li>
+                        <li>Published Language [PL]</li>
+                        <li>Anticorruption Layer [ACL]</li>
+                        <li>Shared Kernel [SK]</li>
+                        <li>Conformist [CF]</li>
+                        <li>Customer / Supplier [C,S]</li>
+                        <li>Partnership [P]</li>
                         <li>Separate ways *</li>
                         <li>Big ball of Mud *</li>
                     </ul>
@@ -562,6 +574,16 @@ PrintingContext [U,OHS]->[D,ACL] PolicyManagementContext {
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
+                    <img src="images/ddd-strategic-ohs.png" width="70%" />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://contextmapper.org/docs/open-host-service/">
+                            https://contextmapper.org/docs/open-host-service/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Published Language</h3>
                     <p>
                         Common language for the translation between the models that are going to interact.
@@ -582,6 +604,16 @@ PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
 }
 </code></pre>
                     <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://contextmapper.org/docs/published-language/">
+                            https://contextmapper.org/docs/published-language/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Published Language</h3>
+                    <img src="images/ddd-strategic-ohs.png" width="70%" />
                     <small><strong>Source:</strong>
                         <a target="_blank" href="https://contextmapper.org/docs/published-language/">
                             https://contextmapper.org/docs/published-language/
@@ -933,6 +965,12 @@ ContractsContext [P]<->[P] ClaimsContext {
                     <br />
                     <small><strong>Source:</strong>
                         https://github.com/ContextMapper/context-mapper-examples/tree/master/src/main/cml/insurance-example</small>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Context mapper</p>
+                    <img src="images/ddd-strategic-team-map.png" width="60%" />
+                    <br />
                 </section>
                 <!--
                 https://github.com/ddd-crew/ddd-starter-modelling-process

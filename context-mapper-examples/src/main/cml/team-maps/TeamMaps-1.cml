@@ -1,0 +1,30 @@
+ContextMap ExampleTeamMap {
+  contains CustomersFrontofficeTeam, CustomersBackofficeTeam, ContractsTeam, ClaimsTeam
+
+  /* relationships: */
+  CustomersBackofficeTeam [U,S]->[D,C] CustomersFrontofficeTeam : CustomerTeamsRelationship
+
+  CustomersBackofficeTeam [U]->[D] ContractsTeam
+
+  ContractsTeam [P]<->[P] ClaimsTeam
+}
+
+BoundedContext CustomersBackofficeTeam {
+  type = TEAM
+  domainVisionStatement = "This team is responsible for implementing the customers module in the back-office system."
+}
+
+BoundedContext CustomersFrontofficeTeam {
+  type = TEAM
+  domainVisionStatement = "This team is responsible for implementing the front-office application for the insurance customers."
+}
+
+BoundedContext ContractsTeam {
+  type = TEAM
+  domainVisionStatement = "This team is responsible for implementing the contract- and policy-management modules in the back-office system."
+}
+
+BoundedContext ClaimsTeam {
+  type = TEAM
+  domainVisionStatement = "This team is responsible for for implementing the claims module and providing customer risks information."
+}
