@@ -1,0 +1,11 @@
+ContextMap ContextMapper {
+	contains Card_Operations, Statements, Plastic_Cards
+
+	Card_Operations [OHS,PL]->[CF] Statements
+
+    Plastic_Cards
+}
+
+BoundedContext Card_Operations
+BoundedContext Statements
+BoundedContext Plastic_Cards
