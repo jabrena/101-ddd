@@ -18,5 +18,10 @@
 	<modules>
 		<module>isolated-examples</module>
 		<module>example</module>
+		<!--
+		Lack of Java 17 support
+		Test manually
+		<module>context-mapper-examples</module>
+		-->
 	</modules>
 </project>

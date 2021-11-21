@@ -6,3 +6,5 @@ target
 .classpath
 .factorypath
 *.iml
+src-gen
+
