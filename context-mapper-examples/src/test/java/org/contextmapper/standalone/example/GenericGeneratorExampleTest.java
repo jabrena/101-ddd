@@ -33,7 +33,7 @@ import static org.contextmapper.standalone.example.ReadingModelTest.INSURANCE_EX
  */
 public class GenericGeneratorExampleTest {
 
-    public final static String FREEMARKER_TEMPLATE = "./src/main/resources/freemarker-sample-template.ftl";
+    public final static String FREEMARKER_TEMPLATE = "./src/test/resources/freemarker-sample-template.ftl";
 
     @Test
     public void test() {
