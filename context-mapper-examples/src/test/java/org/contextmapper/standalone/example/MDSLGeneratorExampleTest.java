@@ -22,7 +22,7 @@ import org.contextmapper.dsl.standalone.StandaloneContextMapperAPI;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.contextmapper.standalone.example.ReadingModelExample.INSURANCE_EXAMPLE_URI;
+import static org.contextmapper.standalone.example.ReadingModelTest.INSURANCE_EXAMPLE_URI;
 
 /**
  * This example shows how you can read your CML model and generate the MDSL

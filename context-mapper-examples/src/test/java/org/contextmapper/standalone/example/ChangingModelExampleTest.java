@@ -26,11 +26,7 @@ import org.eclipse.xtext.resource.SaveOptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
-import static org.contextmapper.standalone.example.ReadingModelExample.INSURANCE_EXAMPLE_URI;
-
-;
+import static org.contextmapper.standalone.example.ReadingModelTest.INSURANCE_EXAMPLE_URI;
 
 /**
  * This example shows how you can read your CML model, change it, and unparse
