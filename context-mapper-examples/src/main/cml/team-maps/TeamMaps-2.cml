@@ -1,0 +1,27 @@
+ContextMap ExampleTeamMap {
+  contains ContractsTeam, CustomersTeam
+  contains Customers, Products, Contracts, Policies
+
+  /* relationships between teams: */
+  ContractsTeam -> CustomersTeam
+
+  /* relationships between Bounded Contexts: */
+  Customers -> Contracts
+
+  Products -> Contracts
+
+  Contracts -> Policies
+}
+
+BoundedContext CustomersTeam realizes Customers {
+  type TEAM
+}
+
+BoundedContext ContractsTeam realizes Products, Contracts, Policies {
+  type TEAM
+}
+
+BoundedContext Customers
+BoundedContext Products
+BoundedContext Contracts
+BoundedContext Policies

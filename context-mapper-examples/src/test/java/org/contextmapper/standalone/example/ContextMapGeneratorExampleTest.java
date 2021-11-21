@@ -14,7 +14,8 @@ public class ContextMapGeneratorExampleTest {
             "./src/main/cml/my-examples/Event-Storming-Stage-1.cml",
             "./src/main/cml/my-examples/Event-Storming-Stage-2.cml",
             "./src/main/cml/my-examples/Event-Storming-Stage-3.cml",
-            "./src/main/cml/my-examples/Event-Storming-Stage-4.cml"
+            "./src/main/cml/my-examples/Event-Storming-Stage-4.cml",
+            "./src/main/cml/my-examples/Event-Storming-Stage-5.cml"
     })
     public void given_cml1_when_execute_then_Ok(String DSL_EXAMPLE_FILE) {
 
