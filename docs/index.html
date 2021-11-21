@@ -50,8 +50,8 @@
                     <blockquote>Can't see the forest for the trees</blockquote>
                     - John Heywood
                 </section>
+                <!--
                 <section>
-                    <!-- <img src="images/conway.png" width="30%" /> -->
                     <blockquote> Any organization that designs a system (defined broadly) will produce a design whose
                         structure is a copy of the organization's communication structure.
                     </blockquote>
@@ -60,8 +60,11 @@
                 <section>
                     <img src="images/joke2.jpg" width="40%" />
                 </section>
+                -->
                 <section>
-                    <img src="images/josh-long.jpg" width="70%" />
+                    <img src="images/josh-long.jpg" width="50%" />
+                    <blockquote>Production is the happiest place in the world.</blockquote>
+                    - Josh Long
                 </section>
                 <!--
                 <section>
@@ -93,7 +96,7 @@
                 <h2>Disclaimer</h2>
                 <img src="images/disclaimer.png" width="30%"/>
                 <p>
-                    <strong>Note:</strong> Use DDD is not the unique way to develop software.
+                    <strong>Note:</strong> DDD is not the unique way to develop software for production.
                 </p>
             </section>
             <section>
@@ -106,6 +109,8 @@
                                 <img src="./images/jab-avatar.png" width="100%"/>
                             </td>
                             <td style="vertical-align: top">
+                                <!-- Computer Science and Engineering (B.S.) <br /> -->
+                                Engineering in Industrial Organization (M.S.) @ <span>ICAI</span> <br />
                                 Technical Architect & Innovation Estratego @ <span>VASS</span> <br />
                                 Associate Professor @ <span>ICAI</span> <br />
                                 STEAM Teacher @ <span>Space Math</span> <br />
@@ -184,7 +189,7 @@
                     <p>
                         Timeline
                     </p>
-                    <img src="images/timeline.jpg" width="60%" />
+                    <img src="images/timeline.jpg" width="50%" />
                     <br />
                     <small><strong>Source:</strong>
                         <a href="https://eventmodeling.org/about/" target="_blank">
@@ -201,6 +206,18 @@
                     <small><strong>Source:</strong>
                         <a href="https://tanzu.vmware.com/developer/guides/kubernetes/app-enhancements-spring-k8s/" target="_blank">
                         https://tanzu.vmware.com/developer/guides/kubernetes/app-enhancements-spring-k8s/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Context</h2>
+                    <p>Microservices running in a multi cloud environments</p>
+                    <img src="images/context-multi-cloud.jpg" width="85%" />
+
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a href="https://www.vmware.com/products/tanzu-service-mesh.html" target="_blank">
+                            https://www.vmware.com/products/tanzu-service-mesh.html
                         </a>
                     </small>
                 </section>
@@ -319,23 +336,32 @@
                     <h2>DDD: "what when why where how"</h2>
                     <h3>What is DDD?</h3>
                     <p>
-                        Domain-driven design (DDD) is the concept that the structure and language of software
-                        code
-                        (class names, class methods, class variables) should match the business domain.
+                        Domain-driven design (DDD) is a software design that focuses on understanding domain experts
+                        and building the software as a model of its domain.
                     </p>
                     <p>
-                        <strong>Source:</strong> Wikipedia
+                        One concept is that the structure and language of software code
+                        (class names, class methods, class variables) should match the business domain.
                     </p>
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://en.wikipedia.org/wiki/Domain-driven_design">
+                            https://en.wikipedia.org/wiki/Domain-driven_design
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>DDD: "what when why where how"</h2>
                     <h3>When use DDD?</h3>
+                    <!--
                     <ul>
                         <li>Greenfield projects</li>
                         <li>Brownfield projects</li>
                     </ul>
-                    <p>
-                        In any moment :)
+                    -->
+                    <br />
+                    <br />
+                    <p style="color:green;">
+                        <strong>In any moment :)</strong>
                     </p>
                 </section>
                 <section>
@@ -349,15 +375,7 @@
                 <section>
                     <h2>DDD: "what when why where how"</h2>
                     <h3>Where use DDD?</h3>
-                    <p>
-                        You could apply DDD at:
-                    </p>
-                    <ul>
-                        <li>Microservice Level</li>
-                        <li>Squad Level</li>
-                        <li>Guild Level</li>
-                        <li>Product Level</li>
-                    </ul>
+                    <img src="images/ddd-when.jpg" width="50%" >
                     <p>Depends of the DDD Skills 🤷‍</p>
                 </section>
                 <section>
@@ -370,6 +388,28 @@
                         <li>Strategically</li>
                         <li>Tactically</li>
                     </ul>
+                </section>
+                <section>
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>How use DDD? Strategic DDD</h3>
+                    <p>
+                        Strategic Design is a set of principles and patterns for maintaining model integrity,
+                        distilling the Business Domain Model, and working with multiple models.
+                        Strategic design is very useful to divide a large and complex business problem into
+                        multiple chunks with clear boundaries and specific responsibilities
+                        and build a high-level software design topology.
+                    </p>
+                </section>
+                <section>
+                    <h2>DDD: "what when why where how"</h2>
+                    <h3>How use DDD? Tactical DDD</h3>
+                    <p>
+                        Tactical Design is a set of design patterns and building blocks that you can use
+                        to abstract low and mid-level components of the software.
+                        Tactical patterns are very hands-on addressing programming code and deal with classes and modules.
+                        The purpose of tactical design is to refine the result of Strategic patterns applied to
+                        a stage where it can be converted into a working code.
+                    </p>
                 </section>
                 <section>
                     <h2>DDD: "what when why where how"</h2>
@@ -393,6 +433,10 @@
                         <li>The Bounded contexts</li>
                         <li>The Context maps</li>
                     </ul>
+                    <hr />
+                    <ul>
+                        <li>Structural Refactorings</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -408,8 +452,10 @@
                     <img src="images/ddd-ubiquitous-language.png">
                     <br />
                     <small><strong>Source:</strong>
-                        https://blog.tekaris.com/blog/introduction-ubiquitous-language/</small>
-
+                        <a target="_blank" href="https://blog.tekaris.com/blog/introduction-ubiquitous-language/">
+                        https://blog.tekaris.com/blog/introduction-ubiquitous-language/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -430,7 +476,10 @@
                     <img src="images/ddd-bounded-context.png" width="60%">
                     <br />
                     <small><strong>Source:</strong>
-                        https://martinfowler.com/bliki/BoundedContext.html</small>
+                        <a target="_blank" href="https://martinfowler.com/bliki/BoundedContext.html">
+                        https://martinfowler.com/bliki/BoundedContext.html
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -443,10 +492,28 @@
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns:</h3>
-                    <img src="images/ddd-context-map-patterns.png" width="60%" />
+                    <img src="images/ddd-context-map-patterns.png" width="55%" />
                     <br />
                     <small><strong>Source:</strong>
-                        https://github.com/ddd-crew/context-mapping</small>
+                        <a target="_blank" href="https://github.com/ddd-crew/context-mapping">
+                        https://github.com/ddd-crew/context-mapping
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns:</h3>
+                    <ul>
+                        <li>Open Host Service</li>
+                        <li>Published Language</li>
+                        <li>Anticorruption Layer</li>
+                        <li>Shared Kernel</li>
+                        <li>Conformist</li>
+                        <li>Customer / Supplier</li>
+                        <li>Partnership</li>
+                        <li>Separate ways *</li>
+                        <li>Big ball of Mud *</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -488,23 +555,24 @@ PrintingContext [U,OHS]->[D,ACL] PolicyManagementContext {
 </code></pre>
                     <br />
                     <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/open-host-service/</small>
+                        <a target="_blank" href="https://contextmapper.org/docs/open-host-service/">
+                        https://contextmapper.org/docs/open-host-service/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Conformist</h3>
+                    <h3>The Context maps patterns: Published Language</h3>
                     <p>
-                        This relationship describes the relationship of 2 bounded context,
-                        where the upstream has no interest in supporting the downstream for whatever reason.
-                        Instead, the downstream must conform to whatever the upstream provides.
-                        This can happen when integrating a new feature with a large,
-                        existing solution that is well established; or using a set of APIs,
-                        where the downstream is not the sole customer.
+                        Common language for the translation between the models that are going to interact.
+                        For example JSON or XML. Usually associated with OHS.
+                        The advantage of using REST services is that in each request the PL
+                        can be specified by configuring the desired content type.
                     </p>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Conformist</h3>
+                    <h3>The Context maps patterns: Published Language</h3>
                     <p>
                         Context mapper syntax:
                     </p>
@@ -515,7 +583,10 @@ PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
 </code></pre>
                     <br />
                     <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/conformist/</small>
+                        <a target="_blank" href="https://contextmapper.org/docs/published-language/">
+                            https://contextmapper.org/docs/published-language/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -544,7 +615,10 @@ DebtCollection [D,ACL]<-[U,OHS,PL] PrintingContext {
 </code></pre>
                     <br />
                     <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/anticorruption-layer/</small>
+                        <a target="_blank" href="https://contextmapper.org/docs/anticorruption-layer/">
+                            https://contextmapper.org/docs/anticorruption-layer/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -572,7 +646,40 @@ CargoBookingContext [SK]<->[SK] VoyagePlanningContext {
 </code></pre>
                     <br />
                     <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/shared-kernel/</small>
+                        <a target="_blank" href="https://contextmapper.org/docs/shared-kernel/">
+                            https://contextmapper.org/docs/shared-kernel/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Conformist</h3>
+                    <p>
+                        This relationship describes the relationship of 2 bounded context,
+                        where the upstream has no interest in supporting the downstream for whatever reason.
+                        Instead, the downstream must conform to whatever the upstream provides.
+                        This can happen when integrating a new feature with a large,
+                        existing solution that is well established; or using a set of APIs,
+                        where the downstream is not the sole customer.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Conformist</h3>
+                    <p>
+                        Context mapper syntax:
+                    </p>
+                    <pre><code data-trim data-noescape>
+PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
+  implementationTechnology = "RESTful HTTP"
+}
+</code></pre>
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://contextmapper.org/docs/conformist/">
+                            https://contextmapper.org/docs/conformist/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -597,7 +704,10 @@ CustomerSelfServiceContext [D,C]<-[U,S] CustomerManagementContext
 </code></pre>
                     <br />
                     <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/customer-supplier/</small>
+                        <a target="_blank" href="https://contextmapper.org/docs/customer-supplier/">
+                            https://contextmapper.org/docs/customer-supplier/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -627,32 +737,10 @@ ContractsContext [P]<->[P] ClaimsContext {
 </code></pre>
                     <br />
                     <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/partnership/</small>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Published Language</h3>
-                    <p>
-                        Common language for the translation between the models that are going to interact.
-                        For example JSON or XML. Usually associated with OHS.
-                        The advantage of using REST services is that in each request the PL
-                        can be specified by configuring the desired content type.
-                    </p>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Published Language</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-                    <pre><code data-trim data-noescape>
-PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
-  implementationTechnology = "RESTful HTTP"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        https://contextmapper.org/docs/published-language/</small>
+                        <a target="_blank" href="https://contextmapper.org/docs/partnership/">
+                            https://contextmapper.org/docs/partnership/
+                        </a>
+                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -660,7 +748,28 @@ PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
                     <img src="images/ddd-context-map-team-relationships.png" />
                     <br />
                     <small><strong>Source:</strong>
-                        https://github.com/ddd-crew/context-mapping</small>
+                        <a target="_blank" href="https://github.com/ddd-crew/context-mapping">
+                            https://github.com/ddd-crew/context-mapping
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <ul>
+                        <li>AR-2: Split Bounded Context by Features</li>
+                        <li>AR-3: Split Bounded Context by Owner</li>
+                        <li>AR-7: Merge Bounded Contexts</li>
+                        <li>AR-8: Extract Shared Kernel</li>
+                        <li>AR-9: Suspend Partnership</li>
+                    </ul>
+                    <br />
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://contextmapper.org/docs/architectural-refactorings/">
+                            https://contextmapper.org/docs/architectural-refactorings/
+                        </a>
+                    </small>
                 </section>
             </section>
             <section>
@@ -1384,20 +1493,28 @@ public class BalanceArchitectureOnionTest {
                 -->
             </section>
             <section>
-                <h2>Who to follow about DDD</h2>
-                <ul>
-                    <li>@ericevans0</li>
-                    <li>@VaughnVernon</li>
-                    <li>@ziobrando</li>
-                    <li>@adymitruk</li>
-                    <li>@EventModeling</li>
-                    <li>@Context_Mapper</li>
-                    <li>@hschwentner</li>
-                    <li>@ntcoding</li>
-                    <li>@odrotbohm</li>
-                    <li>@xmolecules</li>
-                    <li>@jensschauder</li>
-                </ul>
+                <section>
+                    <h2>Who to follow about DDD</h2>
+                    <ul>
+                        <li>@ericevans0</li>
+                        <li>@VaughnVernon</li>
+                        <li>@ziobrando</li>
+                        <li>@adymitruk</li>
+                        <li>@EventModeling</li>
+                        <li>@Context_Mapper</li>
+                        <li>@hschwentner</li>
+                        <li>@ntcoding</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Who to follow about DDD</h2>
+                    <ul>
+                        <li>@xmolecules</li>
+                        <li>@odrotbohm</li>
+                        <li>@jensschauder</li>
+                        <li>@bitboss</li>
+                    </ul>
+                </section>
             </section>
             <section>
                 <section>
@@ -1478,6 +1595,7 @@ public class BalanceArchitectureOnionTest {
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/math/math.js"></script>
     <script>
         // More info about initialization & config:
         // - https://revealjs.com/initialization/
