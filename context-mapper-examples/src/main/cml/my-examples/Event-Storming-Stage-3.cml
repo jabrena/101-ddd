@@ -8,6 +8,7 @@ ContextMap ContextMapper {
 
 BoundedContext Card_Operations {
 	domainVisionStatement "Card Operations manages Customer´s Cards"
+	implementationTechnology = "Java, Spring Boot"
 
 	Aggregate Balances
 	Aggregate Customers
@@ -15,8 +16,13 @@ BoundedContext Card_Operations {
 
 BoundedContext Statements {
 	domainVisionStatement "Statements manages Operations from Cards"
+	implementationTechnology = "Java, Spring Boot"
 
     Aggregate Statements
 }
 
-BoundedContext Plastic_Cards
+BoundedContext Plastic_Cards {
+	domainVisionStatement ""
+	implementationTechnology = "Java, Spring Boot"
+
+}

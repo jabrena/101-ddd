@@ -1,5 +1,6 @@
 ContextMap ContextMapper {
 	contains Card_Operations, Statements, Plastic_Cards
+	contains Dev_Team1, Dev_Team2
 
 	Card_Operations [OHS,PL]->[CF] Statements
 
@@ -8,7 +9,6 @@ ContextMap ContextMapper {
 
 BoundedContext Card_Operations {
 	domainVisionStatement "Card Operations manages Customer´s Cards"
-	implementationTechnology = "Java, Spring Boot"
 
     Aggregate Balances {
         Entity ^Aggregate {
@@ -25,13 +25,16 @@ BoundedContext Card_Operations {
 
 BoundedContext Statements {
 	domainVisionStatement "Statements manages Operations from Cards"
-	implementationTechnology = "Java, Spring Boot"
 
     Aggregate Statements
 }
 
-BoundedContext Plastic_Cards {
-	domainVisionStatement ""
-	implementationTechnology = "Java, Spring Boot"
+BoundedContext Plastic_Cards
 
+BoundedContext Dev_Team1 realizes Card_Operations, Statements {
+  type TEAM
+}
+
+BoundedContext Dev_Team2 realizes Plastic_Cards {
+  type TEAM
 }
