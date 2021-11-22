@@ -19,5 +19,4 @@ public class HexagonalArchitectureTest {
                     .adapter("persistence", "..infrastructure.persistence..")
                     .adapter("rest", "..infrastructure.rest..")
             ;
-
 }
