@@ -14,6 +14,11 @@ jobs:
           java-version: 17
       - name: Build with Maven Wrapper
         run: ./mvnw test -B
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jabrena_101-ddd        
       - name: Publish Test Report
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
