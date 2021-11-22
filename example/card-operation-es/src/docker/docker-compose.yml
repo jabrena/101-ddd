@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mongo:
+    hostname: mongodb
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d/
+    command: ["--replSet", "rs0", "--bind_ip_all"]

@@ -98,26 +98,18 @@ public class Balance implements EventSourcedAggregateRoot<Balance, BalanceId>,
    }
 
    public Balance apply(DomainEvent<Balance> event) {
-      if (event instanceof BalanceCreated) {
-         return apply((BalanceCreated) event);
-      } else if (event instanceof MoneyWithdrawn) {
-         return apply((MoneyWithdrawn) event);
-      } else if (event instanceof MoneyRepaid) {
-         return apply((MoneyRepaid) event);
-      } else if (event instanceof MoneyBalanceLimitDefined) {
-         return apply((MoneyBalanceLimitDefined) event);
-      } else if (event instanceof MoneyWithdrawalFailedDueToInsufficientBalance) {
-         return this;
-      } else if (event instanceof MoneyWithdrawalFailedDueToRecentWithdrawal) {
-         return this;
-      } else if (event instanceof MoneyBalanceLimitAlreadyDefined) {
-         return this;
-      } else if (event instanceof MoneyWithdrawalFailedDueToLimitNotDefined) {
-         return this;
-      } else {
-         throw new IllegalArgumentException(
+      return switch (event) {
+         case BalanceCreated specific -> apply(specific);
+         case MoneyBalanceLimitAlreadyDefined ignored -> this;
+         case MoneyBalanceLimitDefined specific -> apply(specific);
+         case MoneyRepaid specific -> apply(specific);
+         case MoneyWithdrawalFailedDueToInsufficientBalance ignored -> this;
+         case MoneyWithdrawalFailedDueToLimitNotDefined ignored -> this;
+         case MoneyWithdrawalFailedDueToRecentWithdrawal ignored -> this;
+         case MoneyWithdrawn specific -> apply(specific);
+         default -> throw new IllegalArgumentException(
              String.format("This event %s is not supported", event));
-      }
+      };
    }
 
    public Balance apply(BalanceCreated event) {
@@ -135,7 +127,7 @@ public class Balance implements EventSourcedAggregateRoot<Balance, BalanceId>,
    }
 
    public Balance apply(MoneyBalanceLimitDefined event) {
-      return new Balance(balanceId, customerId, balance, lastWithdrawalTime, event.balanceLimit(),
+      return new Balance(balanceId, customerId, balance, null, event.balanceLimit(),
           event.version());
    }
 

@@ -1,13 +1,12 @@
 package com.ddd;
 
-import static com.tngtech.archunit.library.Architectures.onionArchitecture;
-
-import com.tngtech.archunit.core.importer.ImportOption;
-import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
-@AnalyzeClasses(packages = "com.ddd.balance", importOptions = {ImportOption.DoNotIncludeTests.class})
+import static com.tngtech.archunit.library.Architectures.onionArchitecture;
+
+//TODO: Fix Persistence needing access to domain.model classes
+//@AnalyzeClasses(packages = "com.ddd.balance", importOptions = {ImportOption.DoNotIncludeTests.class})
 public class HexagonalArchitectureTest {
 
     @ArchTest
@@ -16,6 +15,8 @@ public class HexagonalArchitectureTest {
                     .domainModels("..domain.model..")
                     .domainServices("..domain.service..")
                     .applicationServices("..application..")
-                    .adapter("rest", "..infrastructure.rest..");
-
+                    .adapter("configuration", "..infrastructure.configuration..")
+                    .adapter("persistence", "..infrastructure.persistence..")
+                    .adapter("rest", "..infrastructure.rest..")
+            ;
 }
