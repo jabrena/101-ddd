@@ -1,6 +1,7 @@
 # 101-ddd
 
 [![Java CI](https://github.com/jabrena/101-ddd/actions/workflows/build.yml/badge.svg)](https://github.com/jabrena/101-ddd/actions/workflows/build.yml)
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=jabrena_101-ddd)
 
 ## Abstract
 
