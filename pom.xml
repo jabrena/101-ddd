@@ -19,13 +19,12 @@
 
 	<modules>
 		<module>card-operations-example</module>
-		<module>example</module>
 		<module>spring-data-jdbc</module>
 		<module>spring-data-jdbc-jmolecules</module>
 		<!--
 		Lack of Java 17 support
 		Test manually
-		<module>context-mapper-examples</module>
+		<module>context-mapper</module>
 		-->
 	</modules>
 </project>
