@@ -160,6 +160,8 @@
                         The talk doesn´t cover the following topics ATM:
                     </p>
                     <ul>
+                        <li>User Story Mapping</li>
+                        <li>Impact Mapping</li>
                         <li>Team topologies</li>
                         <li>Event Modelling</li>
                         <li>Wardley maps</li>
@@ -517,10 +519,19 @@
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns:</h3>
+                    <p>Technical integration patterns between Bounded Contexts</p>
                     <ul>
                         <li>Open Host Service [OHS]</li>
                         <li>Published Language [PL]</li>
                         <li>Anticorruption Layer [ACL]</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns:</h3>
+                    <p>Organizational patterns and integration that describe the types of
+                        relationship between Bonded Contexts</p>
+                    <ul>
                         <li>Shared Kernel [SK]</li>
                         <li>Conformist [CF]</li>
                         <li>Customer / Supplier [C,S]</li>
@@ -568,24 +579,6 @@
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Open Host Service</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-<pre><code data-trim data-noescape>
-PrintingContext [U,OHS]->[D,ACL] PolicyManagementContext {
-  implementationTechnology = "SOAP"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/open-host-service/">
-                        https://contextmapper.org/docs/open-host-service/
-                        </a>
-                    </small>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Open Host Service</h3>
                     <img src="images/ddd-strategic-ohs.png" width="70%" />
                     <small><strong>Source:</strong>
                         <a target="_blank" href="https://contextmapper.org/docs/open-host-service/">
@@ -602,24 +595,6 @@ PrintingContext [U,OHS]->[D,ACL] PolicyManagementContext {
                         The advantage of using REST services is that in each request the PL
                         can be specified by configuring the desired content type.
                     </p>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Published Language</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-                    <pre><code data-trim data-noescape>
-PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
-  implementationTechnology = "RESTful HTTP"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/published-language/">
-                            https://contextmapper.org/docs/published-language/
-                        </a>
-                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -647,24 +622,6 @@ PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Anticorruption Layer</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-<pre><code data-trim data-noescape>
-DebtCollection [D,ACL]<-[U,OHS,PL] PrintingContext {
-  implementationTechnology = "SOAP"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/anticorruption-layer/">
-                            https://contextmapper.org/docs/anticorruption-layer/
-                        </a>
-                    </small>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Shared Kernel</h3>
                     <p>
                         2 or more bounded contexts can share a common model.
@@ -675,24 +632,6 @@ DebtCollection [D,ACL]<-[U,OHS,PL] PrintingContext {
                         as the teams will tend to go on separate ways as their own
                         bounded contexts evolve.
                     </p>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Shared Kernel</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-<pre><code data-trim data-noescape>
-CargoBookingContext [SK]<->[SK] VoyagePlanningContext {
-  implementationTechnology = "Java Library"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/shared-kernel/">
-                            https://contextmapper.org/docs/shared-kernel/
-                        </a>
-                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -708,24 +647,6 @@ CargoBookingContext [SK]<->[SK] VoyagePlanningContext {
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Conformist</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-                    <pre><code data-trim data-noescape>
-PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
-  implementationTechnology = "RESTful HTTP"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/conformist/">
-                            https://contextmapper.org/docs/conformist/
-                        </a>
-                    </small>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Customer/Supplier</h3>
                     <p>
                         This approach puts 2 bounded contexts into an upstream and downstream,
@@ -735,22 +656,6 @@ PolicyManagementContext [D,CF]<-[U,OHS,PL] CustomerManagementContext {
                         This typically works in an autonomous environment within
                         the same organisation, or if the customer is the sole client of the supplier.
                     </p>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Customer/Supplier</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-                    <pre><code data-trim data-noescape>
-CustomerSelfServiceContext [D,C]<-[U,S] CustomerManagementContext
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/customer-supplier/">
-                            https://contextmapper.org/docs/customer-supplier/
-                        </a>
-                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -766,24 +671,6 @@ CustomerSelfServiceContext [D,C]<-[U,S] CustomerManagementContext
                         in understanding each other’s Ubiquitous Language.
                         Of course, if a team was to work on both such bounded contexts,
                         the ‘Partnership’ relationship would be much less costly.                    </p>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Partnership</h3>
-                    <p>
-                        Context mapper syntax:
-                    </p>
-                    <pre><code data-trim data-noescape>
-ContractsContext [P]<->[P] ClaimsContext {
-  implementationTechnology = "Messaging"
-}
-</code></pre>
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a target="_blank" href="https://contextmapper.org/docs/partnership/">
-                            https://contextmapper.org/docs/partnership/
-                        </a>
-                    </small>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -808,9 +695,12 @@ ContractsContext [P]<->[P] ClaimsContext {
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>Strategic Refactoring</h3>
+                    <p>Structural Refactorings:</p>
                     <ul>
                         <li>AR-2: Split Bounded Context by Features</li>
                         <li>AR-3: Split Bounded Context by Owner</li>
+                        <li>AR-4: Extract Aggregates by Volatility</li>
+                        <li>AR-5: Extract Aggregates by Cohesion</li>
                         <li>AR-7: Merge Bounded Contexts</li>
                         <li>AR-8: Extract Shared Kernel</li>
                         <li>AR-9: Suspend Partnership</li>
@@ -822,6 +712,211 @@ ContractsContext [P]<->[P] ClaimsContext {
                             https://contextmapper.org/docs/architectural-refactorings/
                         </a>
                     </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-2: Split Bounded Context by Features</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Description</td>
+                                <td>Input</td>
+                                <td>Output</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Splits a bounded context by grouping those aggregates together into one bounded context which are used by the same use case(s) and/or user stories (features).</td>
+                                <td>1 BC</td>
+                                <td>n BC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-3: Split Bounded Context by Owner</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Splits a bounded context by grouping those aggregates together into one bounded context which belong to the same team.</td>
+                            <td>1 BC</td>
+                            <td>n BC</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-4: Extract Aggregates by Volatility</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Extracts all aggregates from a bounded context by a given volatility, or likelihood for change (RARELY, NORMAL or OFTEN), and moves them to a separate context.</td>
+                            <td>1 BC</td>
+                            <td>2 BC</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-5: Extract Aggregates by Cohesion</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Extracts a set of aggregates which are chosen by certain cohesion criteria and moves them to a separate bounded context.</td>
+                            <td>1 BC</td>
+                            <td>2 BC</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-7: Merge Bounded Contexts</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Merges two bounded contexts together. The result is one bounded context containing all the aggregates of the two input boundedcontexts.</td>
+                            <td>2 BC</td>
+                            <td>1 BC</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-8: Extract Shared Kernel</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Extracts a new bounded context for the common model parts of the Shared Kernel and establishes two upstream-downstream relationship between the new and the existing Bounded Contexts.</td>
+                            <td>1 Shared Kernel relationship</td>
+                            <td>1 New Bounded Context and 2 new upstream-downstream relationships</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-9: Suspend Partnership</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Suspends a Partnership relationship and replaces it with another structure how the two Bounded Context can depend on each other. The AR provides three strategies to suspend the partnership.</td>
+                            <td>1 Partnership relationship</td>
+                            <td>Depends on the selected mode</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>Relationship Refactorings:</p>
+                    <ul>
+                        <li>AR-10: Change Shared Kernel to Partnership</li>
+                        <li>AR-11: Change Partnership to Shared Kernel</li>
+                    </ul>
+                    <br />
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://contextmapper.org/docs/architectural-refactorings/">
+                            https://contextmapper.org/docs/architectural-refactorings/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-10: Change Shared Kernel to Partnership</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Description</td>
+                                <td>Input</td>
+                                <td>Output</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Changes the type of a Shared Kernel relationship to a Partnership relationship.</td>
+                                <td>Shared Kernel relationship</td>
+                                <td>Partnership relationship</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>Strategic Refactoring</h3>
+                    <p>AR-11: Change Partnership to Shared Kernel</p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Description</td>
+                            <td>Input</td>
+                            <td>Output</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Changes the type of a Partnership relationship to a Shared Kernel relationship.</td>
+                            <td>Partnership relationship</td>
+                            <td>Shared Kernel relationship</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </section>
             </section>
             <section>
@@ -984,6 +1079,31 @@ ContractsContext [P]<->[P] ClaimsContext {
                 <section>
                     <h2>Implementing Strategical DDD</h2>
                     <p>Context mapper</p>
+                    <ul>
+                        <li>Step 1: Capture User Requirements as Use Cases and/or User Stories
+                        <li>Step 2: Derive DDD Subdomains from the functional requirements</li>
+                        <!--
+                        We offer a transformation that automates this step.
+                        Of course you can adjust and improve the generated Subdomains manually.
+                        -->
+                        <li>Step 3: Derive DDD Bounded Contexts (type FEATURE) from the Subdomains</li>
+                        <!--
+                        Context Mapper offers a transformation that executes this step.
+                        The generated Bounded Contexts represent features or applications. Have a look at our Bounded Context types to understand how we distinguish between features, applications, systems, and teams.
+                        The generated model elements contain TODO suggestions for further elaboration.
+                        -->
+                        <li>Step 4: Derive SYSTEMs from the FEATUREs
+                        <!--
+                        (optionally, if you want to model the application from a more physical perspective)</li>
+                        We offer transformations to model the FEATURE or APPLICATION Bounded Contexts in terms SYSTEMS in order to model the physical (deployment) perspective.
+                        Find more about the different types of Bounded Contexts here.
+                        The generated Bounded Context model the different systems or subsystems of one application (frontend and backend, and/or other subsystems).
+                        -->
+                    </ul>
+                </section>
+                <section>
+                    <h2>Implementing Strategical DDD</h2>
+                    <p>Context mapper</p>
                     <img src="images/contextmap-e1.png" width="60%" />
                     <br />
                     <small><strong>Source:</strong>
@@ -1006,6 +1126,9 @@ ContractsContext [P]<->[P] ClaimsContext {
                     <small><strong>Source:</strong> <a
                             href="https://github.com/ddd-crew/ddd-starter-modelling-process">https://github.com/ddd-crew/ddd-starter-modelling-process</a></small>
                 </section>
+            </section>
+            <section>
+                <img src="images/intermission.jpg" />
             </section>
             <!--
             https://docs.microsoft.com/en-us/azure/architecture/microservices/model/tactical-ddd
@@ -1672,6 +1795,7 @@ public class BalanceArchitectureOnionTest {
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
         });
         Reveal.configure(
+            { slideNumber: 'c/t' },
             { showNotes: true },
             { showNotes: 'separate-page' },
             { pdfMaxPagesPerSlide: 1 }
