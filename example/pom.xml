@@ -9,7 +9,6 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>card-operations</module>
 		<module>card-operation-es</module>
 	</modules>
 </project>
