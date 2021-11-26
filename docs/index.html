@@ -863,8 +863,6 @@
                     <ul>
                         <li>AR-2: Split Bounded Context by Features</li>
                         <li>AR-3: Split Bounded Context by Owner</li>
-                        <li>AR-4: Extract Aggregates by Volatility</li>
-                        <li>AR-5: Extract Aggregates by Cohesion</li>
                         <li>AR-7: Merge Bounded Contexts</li>
                         <li>AR-8: Extract Shared Kernel</li>
                         <li>AR-9: Suspend Partnership</li>
@@ -915,48 +913,6 @@
                             <td>Splits a bounded context by grouping those aggregates together into one bounded context which belong to the same team.</td>
                             <td>1 BC</td>
                             <td>n BC</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>Strategic Refactoring</h3>
-                    <p>AR-4: Extract Aggregates by Volatility</p>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Description</td>
-                            <td>Input</td>
-                            <td>Output</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Extracts all aggregates from a bounded context by a given volatility, or likelihood for change (RARELY, NORMAL or OFTEN), and moves them to a separate context.</td>
-                            <td>1 BC</td>
-                            <td>2 BC</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>Strategic Refactoring</h3>
-                    <p>AR-5: Extract Aggregates by Cohesion</p>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Description</td>
-                            <td>Input</td>
-                            <td>Output</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Extracts a set of aggregates which are chosen by certain cohesion criteria and moves them to a separate bounded context.</td>
-                            <td>1 BC</td>
-                            <td>2 BC</td>
                         </tr>
                         </tbody>
                     </table>
