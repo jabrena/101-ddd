@@ -723,9 +723,17 @@
                     <p>
                         This is another upstream/downstream relationship at a lower level,
                         where the downstream bounded context implements a layer between itself and the upstream.
+                    </p>
+                    <p>
                         This layer is responsible for translating the objects given by the upstream into its own models.
                         This approach will guarantee the integrity of the downstream bounded
                         context and keeps it completely ignorant of any foreign concepts.
+                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Anticorruption Layer</h3>
+                    <p>
                         This approach is generally useful for integrating new features
                         to some existing legacy software, where you can treat the existing legacy software as
                         a black box bounded context and create an ACL for the new feature.
