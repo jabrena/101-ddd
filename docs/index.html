@@ -84,8 +84,8 @@
                     <li>Context</li>
                     <li>DDD: "what when why where how"</li>
                     <!-- <li>Timeline</li> -->
-                    <li>Strategical DDD</li>
-                    <li>Implementing Strategical DDD</li>
+                    <li>Strategic DDD</li>
+                    <li>Implementing Strategic DDD</li>
                     <li>Tactical DDD</li>
                     <li>Implementing Tactical DDD</li>
                     <li>Who to follow about DDD</li>
@@ -542,6 +542,50 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Bounded contexts</h3>
+                    <img src="images/ddd-bc-step1.png" width="80%">
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd">
+                            https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Bounded contexts</h3>
+                    <img src="images/ddd-bc-step2.png" width="80%">
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd">
+                            https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Bounded contexts</h3>
+                    <img src="images/ddd-bc-step3.png" width="80%">
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd">
+                            https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Bounded contexts</h3>
+                    <img src="images/ddd-bc-step4.png" width="80%">
+                    <br />
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd">
+                            https://speakerdeck.com/mploed/aligning-organization-and-architecture-with-strategic-ddd
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps</h3>
                     <p>
                         Context Maps describe the contact between bounded contexts and teams with a collection of
@@ -605,6 +649,17 @@
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Open Host Service</h3>
+                    <ul>
+                        <li>One API for several consumers</li>
+                        <li>No point-to-point api</li>
+                        <li>Has a common, general purpose model and functionality</li>
+                        <li>The team providing the Open-Host Service is an upstream team</li>
+                    </ul>
+                </section>
+                <!--
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
                     <p>
                         The supplier’s public interface is not intended to conform to its ubiquitous language. Instead, it is intended to expose a protocol convenient for the consumers
                     </p>
@@ -619,6 +674,7 @@
                         In a sense, the open-host service pattern is a reversal of the anticorruption layer pattern: instead of the consumer, the supplier implements the translation of its internal model.
                     </p>
                 </section>
+                -->
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Open Host Service</h3>
@@ -638,6 +694,18 @@
                         The advantage of using REST services is that in each request the PL
                         can be specified by configuring the desired content type.
                     </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Published Language</h3>
+                    <p>
+                        A wel documented language shared between bounded contexts
+                    </p>
+                    <ul>
+                        <li>Every bounded context can translate in and out from that language</li>
+                        <li>Sometimes defined by a consortium of the most important stakeholders / teams</li>
+                        <li>Often combined with Open-Host teams</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -665,6 +733,18 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Anticorruption Layer</h3>
+                    <p>
+                        The Anticorruption Layer translate one model to another one
+                    </p>
+                    <ul>
+                        <li>Transforms an external model from another team / bounded context / system to another internal one</li>
+                        <li>Reduces the amount of coupling to a single layer</li>
+                        <li>The team implementing an Anticorruption Layer is always downstream</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Shared Kernel</h3>
                     <p>
                         2 or more bounded contexts can share a common model.
@@ -675,6 +755,18 @@
                         as the teams will tend to go on separate ways as their own
                         bounded contexts evolve.
                     </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Shared Kernel</h3>
+                    <p>
+                        Shared kernel is a subset of a domain model that two or more teams share                        
+                    </p>
+                    <ul>
+                        <li>Physically shared artefact between two or more teams</li>
+                        <li>High degree of coupling requires a high amount of coordination between the involved teams</li>
+                        <li>Shared kernel is no anti-pattern but use with caution</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -690,6 +782,18 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Conformist</h3>
+                    <p>
+                        The conformist slavishly adhreres to the upstream model
+                    </p>
+                    <ul>
+                        <li>The is no model-to-model transformation</li>
+                        <li>Motivation: Simplicity, contracts, force or delight (for the upstream model)</li>
+                        <li>The team implementing a Conformist is always downstream</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Customer/Supplier</h3>
                     <p>
                         This approach puts 2 bounded contexts into an upstream and downstream,
@@ -699,6 +803,18 @@
                         This typically works in an autonomous environment within
                         the same organisation, or if the customer is the sole client of the supplier.
                     </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Customer/Supplier</h3>
+                    <p>
+                        A customer-supplier development gives the downstream team some influence
+                    </p>
+                    <ul>
+                        <li>Downstream requirements factor into upstream planning. Therefore, the downstream team gains some influence over the priorities and tasks of the upstream team</li>
+                        <li>Customer-Supplier is organisational</li>
+                        <li>Mind vetoing customer and customer agains an ohs as anti-patterns</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -714,6 +830,18 @@
                         in understanding each other’s Ubiquitous Language.
                         Of course, if a team was to work on both such bounded contexts,
                         the ‘Partnership’ relationship would be much less costly.                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Partnership</h3>
+                    <p>
+                        Partnership is about cooperative relationships between teams
+                    </p>
+                    <ul>
+                        <li>Establishes a process for coordinated planning of development and joint management of integration</li>
+                        <li>Not technical at all, Partnership is plain organisational</li>
+                        <li>Recommend for teams with depend on a Shared kernel</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -964,7 +1092,7 @@
             </section>
             <section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p><strong>Techniques:</strong></p>
                     <ul>
                         <li>Event Storming</li>
@@ -986,7 +1114,7 @@
                 https://en.wikipedia.org/wiki/Event_storming
                 -->
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Event-Storming</p>
                     <img src="images/event-storming.png" />
                 </section>
@@ -994,7 +1122,7 @@
                 https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd
                 -->
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Event-Storming</p>
                     <p>
                         Event storming is a workshop-based method to quickly find out what is happening in the
@@ -1005,7 +1133,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Event-Storming</p>
                     <p>
                         Event storming can be used as a means for business process modeling and requirements
@@ -1016,7 +1144,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example: Discovering Domain Events</p>
                     <img src="images/event-storming-example1.png" width="60%" />
                     <br />
@@ -1024,7 +1152,7 @@
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example: Discovering Commands & Queries</p>
                     <img src="images/event-storming-example2.png" width="60%" />
                     <br />
@@ -1032,7 +1160,7 @@
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example: Discovering Invariants</p>
                     <img src="images/event-storming-example3.png" width="60%" />
                     <br />
@@ -1040,15 +1168,16 @@
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example: Discovering the bounded contexts</p>
                     <img src="images/event-storming-example5.png" width="50%" />
                     <br />
                     <small><strong>Source:</strong>
                         https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd</small>
                 </section>
+
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Bounded Context Canvas</p>
                     <img src="images/ddd-bounded-context-canvas.jpg" width="70%" />
                     <br />
@@ -1058,7 +1187,7 @@
                 </section>
                 <!--
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example Mapping</p>
                     <img src="images/example-mapping.png" width="55%" />
                     <br />
@@ -1066,7 +1195,7 @@
                         https://cucumber.io/blog/bdd/example-mapping-introduction/</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example Mapping</p>
                     <p>
                         Example Mapping uses a pack of 4-coloured index cards and some pens to capture these different
@@ -1074,7 +1203,7 @@
                     </p>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example Mapping</p>
                     <ul>
                         <li>We start by writing the story under discussion on <strong>a yellow card</strong> and placing it at the top of the table.</li>
@@ -1084,7 +1213,7 @@
                 </section>
 
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example Mapping</p>
                     <ul>
                         <li>For each rule, we may need one or more examples to illustrate it.
@@ -1094,7 +1223,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Example Mapping</p>
                     <img src="images/example-mapping-e1.png" width="65%" />
                     <br />
@@ -1103,7 +1232,7 @@
                 </section>
                 -->
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Context mapper</p>
                     <p>Context Mapper is a modular and extensible modeling framework for Domain-driven Design (DDD) and its strategic patterns.
                         The core component provides a DSL to create context maps featuring these DDD patterns.</p>
@@ -1112,7 +1241,7 @@
                         https://contextmapper.org/</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Context mapper</p>
                     <img src="images/context-mapper-methodology.png" width="80%" />
                     <br />
@@ -1120,7 +1249,7 @@
                         https://contextmapper.org/</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Context mapper</p>
                     <ul>
                         <li>Step 1: Capture User Requirements as Use Cases and/or User Stories
@@ -1145,7 +1274,7 @@
                     </ul>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Context mapper</p>
                     <img src="images/contextmap-e1.png" width="60%" />
                     <br />
@@ -1153,16 +1282,21 @@
                         https://github.com/ContextMapper/context-mapper-examples/tree/master/src/main/cml/insurance-example</small>
                 </section>
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Context mapper</p>
                     <img src="images/ddd-strategic-team-map.png" width="60%" />
                     <br />
+                </section>
+                <section>
+                    <h2>Implementing Strategic DDD</h2>
+                    <p>Context mapper</p>
+                    <img src="images/demo.png" />
                 </section>
                 <!--
                 https://github.com/ddd-crew/ddd-starter-modelling-process
                 -->
                 <section>
-                    <h2>Implementing Strategical DDD</h2>
+                    <h2>Implementing Strategic DDD</h2>
                     <p>Domain-Driven Design Starter Modelling Process</p>
                     <img src="images/ddd-starter-modelling-process.png" width="70%" />
                     <br />
