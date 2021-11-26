@@ -649,6 +649,17 @@
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Open Host Service</h3>
+                    <ul>
+                        <li>One API for several consumers</li>
+                        <li>No point-to-point api</li>
+                        <li>Has a common, general purpose model and functionality</li>
+                        <li>The team providing the Open-Host Service is an upstream team</li>
+                    </ul>
+                </section>
+                <!--
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Open Host Service</h3>
                     <p>
                         The supplier’s public interface is not intended to conform to its ubiquitous language. Instead, it is intended to expose a protocol convenient for the consumers
                     </p>
@@ -663,6 +674,7 @@
                         In a sense, the open-host service pattern is a reversal of the anticorruption layer pattern: instead of the consumer, the supplier implements the translation of its internal model.
                     </p>
                 </section>
+                -->
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Open Host Service</h3>
@@ -682,6 +694,18 @@
                         The advantage of using REST services is that in each request the PL
                         can be specified by configuring the desired content type.
                     </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Published Language</h3>
+                    <p>
+                        A wel documented language shared between bounded contexts
+                    </p>
+                    <ul>
+                        <li>Every bounded context can translate in and out from that language</li>
+                        <li>Sometimes defined by a consortium of the most important stakeholders / teams</li>
+                        <li>Often combined with Open-Host teams</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -709,6 +733,18 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Anticorruption Layer</h3>
+                    <p>
+                        The Anticorruption Layer translate one model to another one
+                    </p>
+                    <ul>
+                        <li>Transforms an external model from another team / bounded context / system to another internal one</li>
+                        <li>Reduces the amount of coupling to a single layer</li>
+                        <li>The team implementing an Anticorruption Layer is always downstream</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Shared Kernel</h3>
                     <p>
                         2 or more bounded contexts can share a common model.
@@ -719,6 +755,18 @@
                         as the teams will tend to go on separate ways as their own
                         bounded contexts evolve.
                     </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Shared Kernel</h3>
+                    <p>
+                        Shared kernel is a subset of a domain model that two or more teams share                        
+                    </p>
+                    <ul>
+                        <li>Physically shared artefact between two or more teams</li>
+                        <li>High degree of coupling requires a high amount of coordination between the involved teams</li>
+                        <li>Shared kernel is no anti-pattern but use with caution</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -734,6 +782,18 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Conformist</h3>
+                    <p>
+                        The conformist slavishly adhreres to the upstream model
+                    </p>
+                    <ul>
+                        <li>The is no model-to-model transformation</li>
+                        <li>Motivation: Simplicity, contracts, force or delight (for the upstream model)</li>
+                        <li>The team implementing a Conformist is always downstream</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Customer/Supplier</h3>
                     <p>
                         This approach puts 2 bounded contexts into an upstream and downstream,
@@ -743,6 +803,18 @@
                         This typically works in an autonomous environment within
                         the same organisation, or if the customer is the sole client of the supplier.
                     </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Customer/Supplier</h3>
+                    <p>
+                        A customer-supplier development gives the downstream team some influence
+                    </p>
+                    <ul>
+                        <li>Downstream requirements factor into upstream planning. Therefore, the downstream team gains some influence over the priorities and tasks of the upstream team</li>
+                        <li>Customer-Supplier is organisational</li>
+                        <li>Mind vetoing customer and customer agains an ohs as anti-patterns</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
@@ -758,6 +830,18 @@
                         in understanding each other’s Ubiquitous Language.
                         Of course, if a team was to work on both such bounded contexts,
                         the ‘Partnership’ relationship would be much less costly.                    </p>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
+                    <h3>The Context maps patterns: Partnership</h3>
+                    <p>
+                        Partnership is about cooperative relationships between teams
+                    </p>
+                    <ul>
+                        <li>Establishes a process for coordinated planning of development and joint management of integration</li>
+                        <li>Not technical at all, Partnership is plain organisational</li>
+                        <li>Recommend for teams with depend on a Shared kernel</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
