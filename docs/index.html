@@ -66,6 +66,11 @@
                     <blockquote>Production is the happiest place in the world.</blockquote>
                     - Josh Long
                 </section>
+                <section>
+                    <img src="images/ziobrando.png" width="40%" />
+                    <blockquote>it’s not the domain expert's knowledge that goes into production, it’s the developer's assumption of that knowledge.</blockquote>
+                    - Alberto Brandolini
+                </section>
                 <!--
                 <section>
                     <img src="images/joke3.jpg" width="40%" />
@@ -83,7 +88,6 @@
                     <li>Expectations</li>
                     <li>Context</li>
                     <li>DDD: "what when why where how"</li>
-                    <!-- <li>Timeline</li> -->
                     <li>Strategic DDD</li>
                     <li>Implementing Strategic DDD</li>
                     <li>Tactical DDD</li>
@@ -250,21 +254,6 @@
                         </a>
                     </small>
                 </section>
-                <!--
-                <section>
-                    <h2>Context</h2>
-                    <p>
-                        <strong><u>Tackling Complexity</u></strong> in the Heart of Software
-                    </p>
-                    <img src="images/ddd-book-eric-evans.jpg" width="30%" />
-                    <br />
-                    <small><strong>Source:</strong>
-                        <a href="https://www.dddcommunity.org/book/evans_2003/" target="_blank">
-                            https://www.dddcommunity.org/book/evans_2003/
-                        </a>
-                    </small>
-                </section>
-                -->
                 <section>
                     <h2>Context</h2>
                     <p>
@@ -556,6 +545,17 @@
                 </section>
                 <section>
                     <h2>Strategic DDD</h2>
+                    <h3>The Ubiquitous Language</h3>
+                    <p>What happened with meters & miles?</p>
+                    <img src="images/mars-climate-orbiter.jpg" width="40%">
+                    <small><strong>Source:</strong>
+                        <a target="_blank" href="https://www.simscale.com/blog/2017/12/nasa-mars-climate-orbiter-metric/">
+                            https://www.simscale.com/blog/2017/12/nasa-mars-climate-orbiter-metric/
+                        </a>
+                    </small>
+                </section>
+                <section>
+                    <h2>Strategic DDD</h2>
                     <h3>The Bounded contexts</h3>
                     <p>
                         A description of a boundary (typically a subsystem, or the work of a particular team) within
@@ -639,7 +639,7 @@
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns:</h3>
-                    <p>Technical integration patterns between Bounded Contexts</p>
+                    <p>Technical integration patterns between Bounded Contexts:</p>
                     <ul>
                         <li>Open Host Service [OHS]</li>
                         <li>Published Language [PL]</li>
@@ -650,7 +650,7 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns:</h3>
                     <p>Organizational patterns and integration that describe the types of
-                        relationship between Bonded Contexts</p>
+                        relationship between Bonded Contexts:</p>
                     <ul>
                         <li>Shared Kernel [SK]</li>
                         <li>Conformist [CF]</li>
@@ -684,30 +684,10 @@
                     <h3>The Context maps patterns: Open Host Service</h3>
                     <ul>
                         <li>One API for several consumers</li>
-                        <li>No point-to-point api</li>
                         <li>Has a common, general purpose model and functionality</li>
                         <li>The team providing the Open-Host Service is an upstream team</li>
                     </ul>
                 </section>
-                <!--
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Open Host Service</h3>
-                    <p>
-                        The supplier’s public interface is not intended to conform to its ubiquitous language. Instead, it is intended to expose a protocol convenient for the consumers
-                    </p>
-                </section>
-                <section>
-                    <h2>Strategic DDD</h2>
-                    <h3>The Context maps patterns: Open Host Service</h3>
-                    <p>
-                        expressed in an integration-oriented language. Hence, the public protocol is called the “published language.”
-                    </p>
-                    <p>
-                        In a sense, the open-host service pattern is a reversal of the anticorruption layer pattern: instead of the consumer, the supplier implements the translation of its internal model.
-                    </p>
-                </section>
-                -->
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Open Host Service</h3>
@@ -732,7 +712,7 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Published Language</h3>
                     <p>
-                        A wel documented language shared between bounded contexts
+                        A well documented language shared between bounded contexts
                     </p>
                     <ul>
                         <li>Every bounded context can translate in and out from that language</li>
@@ -801,7 +781,7 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Shared Kernel</h3>
                     <p>
-                        Shared kernel is a subset of a domain model that two or more teams share
+                        Shared kernel is a subset of a domain model that two or more teams share:
                     </p>
                     <ul>
                         <li>Physically shared artefact between two or more teams</li>
@@ -825,10 +805,10 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Conformist</h3>
                     <p>
-                        The conformist slavishly adhreres to the upstream model
+                        The conformist slavishly adhreres to the upstream model:
                     </p>
                     <ul>
-                        <li>The is no model-to-model transformation</li>
+                        <!-- <li>The is no model-to-model transformation</li> -->
                         <li>Motivation: Simplicity, contracts, force or delight (for the upstream model)</li>
                         <li>The team implementing a Conformist is always downstream</li>
                     </ul>
@@ -849,7 +829,7 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Customer/Supplier</h3>
                     <p>
-                        A customer-supplier development gives the downstream team some influence
+                        A customer-supplier development gives the downstream team some influence:
                     </p>
                     <ul>
                         <li>Downstream requirements factor into upstream planning. Therefore, the downstream team gains some influence over the priorities and tasks of the upstream team</li>
@@ -861,7 +841,7 @@
                     <h2>Strategic DDD</h2>
                     <h3>The Context maps patterns: Partnership</h3>
                     <p>
-                        Partnership is about cooperative relationships between teams
+                        Partnership is about cooperative relationships between teams:
                     </p>
                     <ul>
                         <li>Establishes a process for coordinated planning of development and joint management of integration</li>
@@ -869,6 +849,7 @@
                         <li>Recommend for teams with depend on a Shared kernel</li>
                     </ul>
                 </section>
+                <!--
                 <section>
                     <h2>Strategic DDD</h2>
                     <img src="images/ddd-strategic-context-mapper.png" />
@@ -889,6 +870,7 @@
                         </a>
                     </small>
                 </section>
+                -->
                 <section>
                     <h2>Strategic DDD</h2>
                     <h3>Strategic Refactoring</h3>
@@ -964,7 +946,8 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Merges two bounded contexts together. The result is one bounded context containing all the aggregates of the two input boundedcontexts.</td>
+                            <td>Merges two bounded contexts together. The result is one bounded context containing
+                                all the aggregates of the two input bounded contexts.</td>
                             <td>2 BC</td>
                             <td>1 BC</td>
                         </tr>
@@ -985,7 +968,9 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Extracts a new bounded context for the common model parts of the Shared Kernel and establishes two upstream-downstream relationship between the new and the existing Bounded Contexts.</td>
+                            <td>Extracts a new bounded context for the common model parts of the Shared Kernel
+                                and establishes two upstream-downstream relationship between
+                                the new and the existing Bounded Contexts.</td>
                             <td>1 Shared Kernel relationship</td>
                             <td>1 New Bounded Context and 2 new upstream-downstream relationships</td>
                         </tr>
@@ -1170,6 +1155,7 @@
                         </a>
                     </small>
                 </section>
+                <!--
                 <section>
                     <h2>Implementing Strategic DDD</h2>
                     <p>Event Storming, The big picture</p>
@@ -1181,6 +1167,7 @@
                         </a>
                     </small>
                 </section>
+                -->
                 <section>
                     <h2>Implementing Strategic DDD</h2>
                     <p>Bounded Context Canvas</p>
@@ -1190,13 +1177,11 @@
                     <p>
                         A bounded context is a sub-system in a software architecture aligned to a part of your domain.
                     </p>
+                    <!--
                     <p>
                         The canvas guides you through the process of designing a bounded context by requiring you to consider and make choices about the key elements of its design, from naming to responsibilities, to its public interface and dependencies.
                     </p>
-                    <br />
-                    <small><strong>Source:</strong>
-                        https://github.com/ddd-crew/bounded-context-canvas
-                    </small>
+                    -->
                     <small><strong>Source:</strong>
                         <a target="_blank" href="https://github.com/ddd-crew/bounded-context-canvas">
                             https://github.com/ddd-crew/bounded-context-canvas
