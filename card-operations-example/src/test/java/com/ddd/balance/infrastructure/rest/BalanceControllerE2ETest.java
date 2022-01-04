@@ -74,7 +74,7 @@ public class BalanceControllerE2ETest {
 
 		//Then
 		then(result3.getStatusCode()).isEqualTo(HttpStatus.OK);
-		then(result3.getBody().amount()).isEqualTo(new BigDecimal("90.00"));
+		then(result3.getBody().amount()).isEqualTo(new BigDecimal("100.00"));
 
 	}
 

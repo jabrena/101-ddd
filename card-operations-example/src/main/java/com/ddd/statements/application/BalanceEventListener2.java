@@ -16,6 +16,6 @@ public class BalanceEventListener2 {
     public void addStatementNegative(MoneyWithdrewEventStep2 event) {
         Balance source = event.getSource();
         logger.info("New Event Received: MoneyWithdrewEventStep2 {}", source);
-        //throw new RuntimeException("Katakroker");
+        throw new RuntimeException("Katakroker");
     }
 }
