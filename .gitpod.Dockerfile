@@ -10,5 +10,5 @@ FROM gitpod/workspace-full
 RUN sudo apt-get update \
     && sudo apt-get -y install graphviz
 
-# Install JHipster
-# RUN npm install -g generator-jhipster
+# Install Java 17
+RUN bash -c ". /home/gitpod/.sdkman/bin/sdkman-init.sh && sdk install java 17.0.0-tem"
