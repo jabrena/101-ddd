@@ -13,8 +13,15 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.springframework.transaction.annotation.Propagation.REQUIRES_NEW;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class BalanceServiceImpl implements BalanceService {
+
+    Logger logger = LoggerFactory.getLogger(BalanceServiceImpl.class);
 
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
@@ -22,10 +29,22 @@ public class BalanceServiceImpl implements BalanceService {
     @Autowired
     private BalanceRepository balanceRepository;
 
+    @Transactional(readOnly = true)
+    @Override
+    public Optional<Balance> balance(Long idCustomer) {
+
+        logger.info("Returning a balance for customer: {}", idCustomer);
+
+        return balanceRepository.findById(idCustomer);
+    }
+
+    //@Transactional(rollbackFor = RuntimeException.class)
     @Transactional
     @Override
     public Optional<Balance> witdhdraw(Long idCustomer, BigDecimal quantity) {
 
+        logger.info("Witdhdraw {} for customer {}", quantity, idCustomer);
+        
         var newBalance = balanceRepository.findById(idCustomer)
                 .flatMap(currentBalance -> currentBalance.withdraw(quantity))
                 .map(balanceRepository::save);
